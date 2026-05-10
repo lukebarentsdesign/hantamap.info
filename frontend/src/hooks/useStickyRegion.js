@@ -1,9 +1,7 @@
 import { useState, useEffect } from 'react';
 
 export function useStickyRegion() {
-  const [region, setRegion] = useState(() => {
-    return localStorage.getItem('hantavirus-tracker-region') || 'GB';
-  });
+  const [region, setRegion] = useState('GB');
 
   const updateRegion = (newRegion) => {
     setRegion(newRegion);

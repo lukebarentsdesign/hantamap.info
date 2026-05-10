@@ -5,7 +5,7 @@ import { MvHondiusIntel } from './MvHondiusIntel'
 import { MvHondiusAnalytics } from './MvHondiusAnalytics'
 
 export function DashboardViewport({ whoCountries, signals, onRegionClick }) {
-  const [activeTab, setActiveTab] = useState('hondius')
+  const [activeTab, setActiveTab] = useState('map')
 
   return (
     <div className="dash-viewport-root">

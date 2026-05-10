@@ -16,7 +16,7 @@ import { TickerFooter }   from './components/TickerFooter'
 export default function App() {
   const { snapshot, delta, loading } = useSnapshot()
   const [activeRegion, setActiveRegion] = useStickyRegion()
-  const [isLocaleOpen, setIsLocaleOpen] = useState(false)
+  const [isLocaleOpen, setIsLocaleOpen] = useState(true)
   
   // Drawer logic instead of Sidebar
   const [activePanel, setActivePanel] = useState(null)
@@ -52,18 +52,9 @@ export default function App() {
   }
 
   const openSignalArticle = (signal) => {
-    if (!signal?.url) return
-    const shouldTranslate = signal.language && signal.language !== 'en'
-    const target = shouldTranslate
-      ? `https://translate.google.com/translate?sl=auto&tl=en&u=${encodeURIComponent(signal.url)}`
-      : signal.url
-    const opened = window.open(target, '_blank')
-    if (opened) {
-      opened.opener = null
-      return
-    }
-    window.location.href = target
-  }
+    if (!signal?.url) return;
+    window.open(signal.url, '_blank', 'noopener,noreferrer');
+  };
 
   return (
     <div className="dash-viewport-root">
@@ -160,8 +151,8 @@ export default function App() {
                       </div>
                     ) : (
                       tier1.map((s, i) => (
-                        <button key={`t1-${i}`} onClick={() => openSignalArticle(s)} style={{
-                          display:'block', width:'100%', textAlign:'left', cursor:'pointer', fontFamily:'inherit', padding:'12px', borderRadius:'8px', 
+                        <a key={`t1-${i}`} href={s.url} target="_blank" rel="noopener noreferrer" style={{
+                          display:'block', width:'100%', textAlign:'left', textDecoration:'none', cursor:'pointer', fontFamily:'inherit', padding:'12px', borderRadius:'8px', 
                           background:'rgba(249, 115, 22, 0.05)', border:'1px solid rgba(249, 115, 22, 0.2)', marginBottom:'8px'
                         }}>
                            <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'6px'}}>
@@ -173,7 +164,7 @@ export default function App() {
                            <div style={{fontSize:'12px', fontWeight:700, color: 'var(--text)', lineHeight:1.4}}>
                              {s.title}
                            </div>
-                        </button>
+                        </a>
                       ))
                     )}
                   </div>
@@ -193,8 +184,8 @@ export default function App() {
                       others.map((s, i) => {
                          const isNew = s.published_at && ((new Date() - new Date(s.published_at))/(1000*60*60) <= 72);
                          return (
-                          <button key={`o-${i}`} onClick={() => openSignalArticle(s)} style={{
-                            display:'block', width:'100%', textAlign:'left', cursor:'pointer', fontFamily:'inherit', padding:'12px', borderRadius:'8px', 
+                          <a key={`o-${i}`} href={s.url} target="_blank" rel="noopener noreferrer" style={{
+                            display:'block', width:'100%', textAlign:'left', textDecoration:'none', cursor:'pointer', fontFamily:'inherit', padding:'12px', borderRadius:'8px', 
                             background:'var(--bg3)', border: isNew ? '1px solid rgba(2, 132, 199, 0.3)' : '1px solid var(--border)', marginBottom:'8px'
                           }}>
                              <div style={{display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'6px'}}>
@@ -206,7 +197,7 @@ export default function App() {
                              <div style={{fontSize:'12px', fontWeight:500, color: 'var(--text)', lineHeight:1.4}}>
                                {s.title}
                              </div>
-                          </button>
+                          </a>
                          )
                       })
                     )}
