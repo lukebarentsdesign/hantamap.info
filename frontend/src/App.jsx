@@ -16,7 +16,7 @@ import { TickerFooter }   from './components/TickerFooter'
 export default function App() {
   const { snapshot, delta, loading } = useSnapshot()
   const [activeRegion, setActiveRegion] = useStickyRegion()
-  const [isLocaleOpen, setIsLocaleOpen] = useState(true)
+  const [isLocaleOpen, setIsLocaleOpen] = useState(false)
   
   // Drawer logic instead of Sidebar
   const [activePanel, setActivePanel] = useState(null)
