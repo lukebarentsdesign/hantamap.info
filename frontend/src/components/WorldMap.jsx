@@ -10,7 +10,7 @@ const TILES = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}
 const ATTR = '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>'
 
 export function WorldMap({ whoCountries = [], signals = [], isDashboard = false, onRegionClick }) {
-  const isSmallViewport = typeof window !== 'undefined' && window.innerWidth <= 640
+  const isSmallViewport = typeof window !== 'undefined' && window.innerWidth <= 768
   const initialZoom = isSmallViewport ? 1.35 : 2.5
   const minimumZoom = isSmallViewport ? 1.1 : 2
 
@@ -55,6 +55,7 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
       worldCopyJump={false}
       style={{ height: '100%', width: '100%', background: '#dce6f2' }}
       scrollWheelZoom={true}
+      tap={false}
     >
       <TileLayer 
         url={TILES} 
@@ -86,16 +87,18 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
           fillOpacity={0.86}
           className={point.tone === 'current' || point.tone === 'high' ? 'pulse-marker' : ''}
         >
-          <Tooltip direction="top" offset={[0, -5]} opacity={1}>
-            <div style={{fontWeight: 800, color: 'var(--text)', fontSize: '12px', marginBottom: '4px'}}>
-              {point.name}
-            </div>
-            <div style={{fontSize: '11px', color: 'var(--text2)', lineHeight: 1.45}}>
-              <strong style={{color: 'var(--accent)'}}>{point.label}</strong>
-              <br />
-              {point.note}
-            </div>
-          </Tooltip>
+          {!isSmallViewport && (
+            <Tooltip direction="top" offset={[0, -5]} opacity={1}>
+              <div style={{fontWeight: 800, color: 'var(--text)', fontSize: '12px', marginBottom: '4px'}}>
+                {point.name}
+              </div>
+              <div style={{fontSize: '11px', color: 'var(--text2)', lineHeight: 1.45}}>
+                <strong style={{color: 'var(--accent)'}}>{point.label}</strong>
+                <br />
+                {point.note}
+              </div>
+            </Tooltip>
+          )}
         </CircleMarker>
       ))}
 
@@ -110,12 +113,14 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
           opacity={1}
           fillOpacity={0.75}
         >
-          <Tooltip direction="top" offset={[0, -5]} opacity={1}>
-            <div style={{fontWeight: 800, color: 'var(--text)', fontSize: '12px', marginBottom: '4px'}}>
-              {name}
-            </div>
-            <div style={{fontSize: '11px', color: 'var(--text2)'}}>{note}</div>
-          </Tooltip>
+          {!isSmallViewport && (
+            <Tooltip direction="top" offset={[0, -5]} opacity={1}>
+              <div style={{fontWeight: 800, color: 'var(--text)', fontSize: '12px', marginBottom: '4px'}}>
+                {name}
+              </div>
+              <div style={{fontSize: '11px', color: 'var(--text2)'}}>{note}</div>
+            </Tooltip>
+          )}
         </CircleMarker>
       ))}
 
@@ -148,31 +153,33 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
               click: () => onRegionClick && onRegionClick(iso)
             }}
           >
-            <Tooltip direction="top" offset={[0, -5]} opacity={1}>
-              <div style={{ 
-                fontWeight: 'bold', 
-                color: 'var(--text)',
-                fontSize: '12px',
-                marginBottom: '4px'
-              }}>
-                {name}
-              </div>
-              <div style={{ 
-                fontSize: '11px', 
-                color: 'var(--text2)',
-                display: 'flex',
-                flexDirection: 'column',
-                gap: '2px'
-              }}>
-                {isConfirmed && (
-                  <div style={{ color: '#f97316', fontWeight: 600 }}>• WHO Confirmed</div>
-                )}
-                <div>• Total Signals: {regionSignals.length}</div>
-                {isHot && (
-                  <div style={{ color: '#0284c7', fontWeight: 600 }}>• Recent Heat detected</div>
-                )}
-              </div>
-            </Tooltip>
+            {!isSmallViewport && (
+              <Tooltip direction="top" offset={[0, -5]} opacity={1}>
+                <div style={{ 
+                  fontWeight: 'bold', 
+                  color: 'var(--text)',
+                  fontSize: '12px',
+                  marginBottom: '4px'
+                }}>
+                  {name}
+                </div>
+                <div style={{ 
+                  fontSize: '11px', 
+                  color: 'var(--text2)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '2px'
+                }}>
+                  {isConfirmed && (
+                    <div style={{ color: '#f97316', fontWeight: 600 }}>• WHO Confirmed</div>
+                  )}
+                  <div>• Total Signals: {regionSignals.length}</div>
+                  {isHot && (
+                    <div style={{ color: '#0284c7', fontWeight: 600 }}>• Recent Heat detected</div>
+                  )}
+                </div>
+              </Tooltip>
+            )}
           </CircleMarker>
         )
       })}
