@@ -3048,4 +3048,11 @@ html, body, #root, .dash-viewport-root {
     grid-template-columns: 1fr !important;
     gap: 12px !important;
   }
+
+  /* 6. Lift floating secondary control pills above the bottom main app bar */
+  .bottom-controls {
+    bottom: calc(72px + env(safe-area-inset-bottom)) !important;
+    padding: 0 12px !important;
+    z-index: 9999 !important;
+  }
 }
