@@ -143,9 +143,9 @@ export function SignalFeed({ signals, onArticleClick }) {
         })}
       </div>
 
-      <p className="signals-note" role="note">
-        Signals reflect monitored official, media and Google News feeds.
-        Counts and clinical status still require official-source validation.
+      <p className="signals-note" role="note" style={{color: 'var(--text3)', lineHeight: 1.4, borderTop: '1px solid rgba(255,255,255,0.05)', paddingTop: '12px'}}>
+        <strong>DATA DISCLAIMER:</strong> These are automated intelligence mentions scraped from the open web. 
+        Mentions do <u>NOT</u> represent confirmed medical caseloads.
       </p>
     </section>
   )

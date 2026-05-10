@@ -138,7 +138,7 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
         // RESTORE SAFETY: The Map Dot ALWAYS uses the verified "isConfirmed" source data ONLY. 
         // We do NOT let the news scraper override the map's state!
         const finalColor = isConfirmed ? '#dc2626' : (isHot ? '#0284c7' : '#0ea5e9');
-        const finalLabel = isConfirmed ? 'Confirmed Outbreak Area' : (isHot ? 'Recent News Signals' : 'Standard Monitoring');
+        const finalLabel = isConfirmed ? 'Confirmed Outbreak Area' : (isHot ? 'Recent News Signals' : 'Standard News Tracking');
 
         let markerClass = "";
         if (isConfirmed) markerClass = "pulse-marker";
@@ -180,14 +180,41 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
                 <div style={{fontSize: '11px', color: 'var(--text2)', marginBottom:'4px'}}>
                   {finalLabel}
                 </div>
-                <div style={{fontSize: '10px', color: 'var(--text3)'}}>
-                  {regionSignals.length} signal{regionSignals.length === 1 ? '' : 's'} active
+                <div style={{fontSize: '10px', color: 'var(--text3)', fontStyle: 'italic'}}>
+                  {regionSignals.length} news report{regionSignals.length === 1 ? '' : 's'} detected
                 </div>
               </Tooltip>
             )}
           </CircleMarker>
         )
       })}
+
+      {/* TRANSPARENCY NOTICE OVERLAY */}
+      <div className="map-notice" style={{
+        position: 'absolute',
+        top: '10px',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        zIndex: 1000,
+        background: 'rgba(15, 23, 42, 0.9)',
+        backdropFilter: 'blur(4px)',
+        border: '1px solid rgba(255,255,255,0.1)',
+        borderRadius: '6px',
+        padding: '6px 12px',
+        fontSize: '10px',
+        fontWeight: 600,
+        color: 'var(--text2)',
+        letterSpacing: '0.03em',
+        pointerEvents: 'none',
+        whiteSpace: 'nowrap',
+        display: 'flex',
+        alignItems: 'center',
+        gap: '6px',
+        boxShadow: '0 4px 12px rgba(0,0,0,0.3)'
+      }}>
+        <span style={{color: '#f59e0b', fontSize:'12px'}}>⚠</span>
+        MAP INDICATORS TRACK <span style={{color: '#fff'}}>NEWS MENTIONS</span>, NOT CASELOADS
+      </div>
 
     </MapContainer>
   )
@@ -202,15 +229,15 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
     }}>
       <div className="legend-i">
         <span className="legend-dot pulse-marker" style={{ background: '#dc2626' }} aria-hidden="true" />
-        Confirmed Outbreak
+        Confirmed Outbreak (WHO)
       </div>
       <div className="legend-i">
         <span className="legend-dot heat-signal" style={{ background: '#0284c7' }} aria-hidden="true" />
-        Recent Signal Activity
+        Recent Media Reports
       </div>
       <div className="legend-i">
         <span className="legend-dot" style={{ background: '#0ea5e9', opacity:0.6 }} aria-hidden="true" />
-        Monitoring Coverage
+        Media Coverage Area
       </div>
     </div>
   )
