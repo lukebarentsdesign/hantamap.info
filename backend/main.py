@@ -32,10 +32,12 @@ app.add_middleware(
 def startup():
     database.init_db()
     scheduler = BackgroundScheduler(timezone="UTC")
-    scheduler.add_job(ingest, "interval", minutes=15, id="ingest")
+    # Fire the ingest immediately as a BACKGROUND task instead of blocking startup
+    scheduler.add_job(ingest, "date", run_date=datetime.now(timezone.utc), id="initial_ingest")
+    # Then schedule the routine repeater every 15m
+    scheduler.add_job(ingest, "interval", minutes=15, id="ingest_loop")
     scheduler.start()
-    print("Scheduler started. Running initial ingest...")
-    ingest()
+    print("Scheduler initialized background worker. Application starting...")
 
 
 def ingest():
