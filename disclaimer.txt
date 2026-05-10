@@ -1,0 +1,34 @@
+
+
+This tracker is a visualization tool for monitoring disease transmission chains and is NOT an official public health resource.
+DATA SOURCES & LIMITATIONS
+
+    Case data is manually entered from public sources (news reports, WHO briefings, official announcements)
+    Data may be incomplete, outdated, or contain errors from source reporting
+    Case status (suspected/confirmed) reflects information available at time of entry and may change
+    Laboratory-confirmed vs suspected cases are based on publicly reported information only
+    This tracker is NOT connected to official health authority databases or real-time reporting systems
+
+TRANSMISSION CHAIN ACCURACY
+
+    Transmission connections are based on available contact tracing data from public sources
+    Person-to-person transmission is inferred from reported exposure, not epidemiological investigation
+    Exposure timelines, flight manifests, and cabin assignments may be incomplete or approximate
+    Secondary transmission risk calculations are estimates only, not epidemiological predictions
+
+OFFICIAL INFORMATION SOURCES
+
+    WHO Emergency Response: who.int/emergencies
+    CDC Outbreak Tracking: cdc.gov
+    ECDC (Europe): ecdc.europa.eu
+    Local public health authorities in your region
+
+INTENDED USE
+
+Designed for personal research, situational awareness, and understanding transmission patterns.
+⛔ DO NOT USE FOR: official contact tracing  ·  public health decision-making  ·  travel or quarantine decisions  ·  medical advice
+ACCURACY RESPONSIBILITY
+
+Data entry and visualization are subject to human error. Always verify critical information with official health sources before making any decisions based on this tracker.
+LAST UPDATED: May 9, 2026 SYSTEM: EPITRACE v2.0 · RETRO BUILD
+DO NOT SHOW ON STARTUP 

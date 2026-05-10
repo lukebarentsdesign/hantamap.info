@@ -1,0 +1,3 @@
+Deployment on Railway, step by step, free
+Go to railway.app and sign up. Connect your GitHub account. Create a new project from your repo. Railway detects the Procfile and deploys automatically. Add a volume for the SQLite file mounted at ./data. Set environment variable SITE_URL to your Railway URL. Add RESEND_API_KEY when you have one. That is it. Live in about 3 minutes.
+When you buy a domain (Porkbun is cheapest, around £8/year for a .com) point it at Railway using their custom domain settings. Takes 10 minutes.

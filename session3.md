@@ -1,0 +1,9 @@
+SESSION 3 — Polish and launch readiness
+The hantavirus tracker frontend React app needs the following additions:
+Add a page title of "Hantavirus Outbreak Tracker — Live Cases & WHO Updates" and the following meta tags in the HTML head: og:title, og:description with a concise description of the tracker, og:image pointing to /share-card.png, twitter:card set to summary_large_image.
+Generate a static shareable social card image as a PNG file at public/share-card.png, size 1200 by 630 pixels. Use an HTML Canvas approach or a Node script to generate it at build time. The card should show on a near-black background: the text "HANTAVIRUS TRACKER" in large white text at the top, the current confirmed case count and death count in large red-orange text in the centre, and "hantavirus-tracker.com · Live WHO & CDC data" in small grey text at the bottom. This card is what gets shown when someone shares the link on Twitter, WhatsApp or iMessage — make it look credible and clear.
+Add a /sitemap.xml served by the nginx config listing the single page URL.
+Add a robots.txt allowing all crawlers.
+Add a JSON-LD structured data script tag in the index.html head using the MedicalCondition schema type for hantavirus, including name, description, and a link to the WHO fact sheet at https://www.who.int/news-room/fact-sheets/detail/hantavirus-and-hantavirus-disease.
+Add Plausible Analytics by including their script tag in the index.html head with the data-domain attribute set to whatever domain we deploy on. Plausible is privacy-first and requires no cookie banner.
+Finally write a LAUNCH.md file in the project root containing a deployment checklist for Cloud Run with the required environment variables listed, the gcloud commands to deploy both the backend and frontend containers, and the domain configuration steps.

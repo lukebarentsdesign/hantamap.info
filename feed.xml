@@ -1,0 +1,564 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0"
+     xmlns:atom="http://www.w3.org/2005/Atom"
+     xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Hantaflow: Hantavirus signals</title>
+    <link>https://hantaflow.com/map</link>
+    <atom:link href="https://hantaflow.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description>Hantaflow tracks the global hantavirus outbreak in real time. Country-level signals, authoritative public-health updates from WHO, CDC, ECDC and PAHO, ship-route alerts, and verified news from 12+ languages. Free, transparent, sourced.</description>
+    <language>en</language>
+    <lastBuildDate>Sat, 09 May 2026 23:30:27 GMT</lastBuildDate>
+    <ttl>15</ttl>
+
+    <item>
+      <title>WHO chief says Hantavirus outbreak ‘is not COVID’ - Al Jazeera</title>
+      <link>https://news.google.com/rss/articles/CBMilgFBVV95cUxPZTJxQ0Z3S1Y1YnZUTEdUaTNoZk0zYXFZMFBjZ1FjYTNkVVlIV3N4SE5GU1ZIblVZMUM3cnUwbERBSEdWR2xKSjk1NUVyM3NfalFWT28xZVZ2UlFOWUN4MmhVakFmMzZDYkJzM2o1SEM3SFNkbWJzRjRyT2l2MjhQdzY0WFFOcXdCTnlJVm0wdnlnVFQ3X3fSAZsBQVVfeXFMUGdac2ZNZjNuaUtvd0g2dFdEeUVNZzUxS1NJeDR6ZXFOUEcxUzBOWmFaV2xFTFBEOFd4MDYtaDVOQUlHb2ltUkxVQ1RwRVFEelFfYVppbDFWX1gtMFBtcXFwak5jNWczV0J6d3VvQWVEcDFQcnhrQV81eW9BRXRzTDUxci1rZG5BMmxTT1VRc193WE9yck9FQ3V6NFU?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/7e76cfc93f2e1dbe</guid>
+      <pubDate>Sat, 09 May 2026 23:26:05 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMilgFBVV95cUxPZTJxQ0Z3S1Y1YnZUTEdUaTNoZk0zYXFZMFBjZ1FjYTNkVVlIV3N4SE5GU1ZIblVZMUM3cnUwbERBSEdWR2xKSjk1NUVyM3NfalFWT28xZVZ2UlFOWUN4MmhVakFmMzZDYkJzM2o1SEM3SFNkbWJzRjRyT2l2MjhQdzY0WFFOcXdCTnlJVm0wdnlnVFQ3X3fSAZsBQVVfeXFMUGdac2ZNZjNuaUtvd0g2dFdEeUVNZzUxS1NJeDR6ZXFOUEcxUzBOWmFaV2xFTFBEOFd4MDYtaDVOQUlHb2ltUkxVQ1RwRVFEelFfYVppbDFWX1gtMFBtcXFwak5jNWczV0J6d3VvQWVEcDFQcnhrQV81eW9BRXRzTDUxci1rZG5BMmxTT1VRc193WE9yck9FQ3V6NFU?oc=5">Google News (EN)</source>
+      <category>news</category>
+      <dc:coverage>US</dc:coverage>
+      <description>WHO chief says Hantavirus outbreak ‘is not COVID’ Al Jazeera</description>
+    </item>
+
+    <item>
+      <title>Alerta por hantavirus en Italia: Vigilancia activa en 4 regiones, una mujer en cuarentena en Florencia - MSN</title>
+      <link>https://news.google.com/rss/articles/CBMiqgJBVV95cUxPdjhEY1RyS1IyQThRNkpiNFdJWVhSS0RQazNUTm5peDc2QXNBRVl3WkFhV09rS0NNUXVyTmxZbkZZNngzR0lZaElfTFhvZGJya0VXWl9OZzk2UkhEemZwOGxRVm5WWTRERl9xNFFWLW56Y3o1cE5yakxSQTJxckZoZVRYZ0FzTXpnLUpnSUp1b192ekVJZGEtdTd1enZVNk5zMjYxVm5vRVc4RVJEdWJvVDdKaENOYU11ZFg3M2tVa21paFEzSXpOQ3NuMl9Gck50MzQ3QXFJLURnaTZqWHZqSXNaSUQ0b1BzY0QwdlZIaDIxYldaYUVjeUlNYUJsbkdYYTU3RHhCQVlTRm1uVV95NWQ1NTNHcjd5SFV2WDBpcmZBdHRmSFdIREd3?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/0e3bc25f1e34939b</guid>
+      <pubDate>Sat, 09 May 2026 23:02:10 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMiqgJBVV95cUxPdjhEY1RyS1IyQThRNkpiNFdJWVhSS0RQazNUTm5peDc2QXNBRVl3WkFhV09rS0NNUXVyTmxZbkZZNngzR0lZaElfTFhvZGJya0VXWl9OZzk2UkhEemZwOGxRVm5WWTRERl9xNFFWLW56Y3o1cE5yakxSQTJxckZoZVRYZ0FzTXpnLUpnSUp1b192ekVJZGEtdTd1enZVNk5zMjYxVm5vRVc4RVJEdWJvVDdKaENOYU11ZFg3M2tVa21paFEzSXpOQ3NuMl9Gck50MzQ3QXFJLURnaTZqWHZqSXNaSUQ0b1BzY0QwdlZIaDIxYldaYUVjeUlNYUJsbkdYYTU3RHhCQVlTRm1uVV95NWQ1NTNHcjd5SFV2WDBpcmZBdHRmSFdIREd3?oc=5">Google News (ES)</source>
+      <category>news</category>
+      <dc:coverage>AR</dc:coverage>
+      <description>Alerta por hantavirus en Italia: Vigilancia activa en 4 regiones, una mujer en cuarentena en Florencia MSN</description>
+    </item>
+
+    <item>
+      <title>U.S. outlines plan to monitor Americans returning from hantavirus-hit ship - The Washington Post</title>
+      <link>https://news.google.com/rss/articles/CBMif0FVX3lxTE9GaUNfMEhMMFBwUVR2WWNiNFVidkNQSm1DbHN5cWNoVWxNVk5rYzJETmlhbFp6a2RwbjJEd0ZuMVNiM2dybHl1dzNuQkd1eEhMNFF4c1pndDFWcElucVJaekpfdTlvRU92dS1pZlFtblVTNmRzQXRjTjhGUG1UQzg?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/a72963b28cf3552e</guid>
+      <pubDate>Sat, 09 May 2026 23:00:36 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMif0FVX3lxTE9GaUNfMEhMMFBwUVR2WWNiNFVidkNQSm1DbHN5cWNoVWxNVk5rYzJETmlhbFp6a2RwbjJEd0ZuMVNiM2dybHl1dzNuQkd1eEhMNFF4c1pndDFWcElucVJaekpfdTlvRU92dS1pZlFtblVTNmRzQXRjTjhGUG1UQzg?oc=5">Google News (EN)</source>
+      <category>news</category>
+      <dc:coverage>US</dc:coverage>
+      <description>U.S. outlines plan to monitor Americans returning from hantavirus-hit ship The Washington Post</description>
+    </item>
+
+    <item>
+      <title>Desata hantavirus trauma por Covid - Reforma</title>
+      <link>https://news.google.com/rss/articles/CBMid0FVX3lxTE45cUliNFlBTEFyMTJteGpRNGJPNWVVdDM4akctSVNuckJpbWMwZy1QWE5fS3JlZjlVMGFPS1loV2J0RGZjQUxPTFdoWGx6eFdZR21BWGoxaHoyN3NpN3dKZGdwb0c1cm5STlNYQ05XSXJNcGdvT3pz?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/2ed08e85e49cb8ba</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMid0FVX3lxTE45cUliNFlBTEFyMTJteGpRNGJPNWVVdDM4akctSVNuckJpbWMwZy1QWE5fS3JlZjlVMGFPS1loV2J0RGZjQUxPTFdoWGx6eFdZR21BWGoxaHoyN3NpN3dKZGdwb0c1cm5STlNYQ05XSXJNcGdvT3pz?oc=5">Google News (ES)</source>
+      <category>news</category>
+      <dc:coverage>MX</dc:coverage>
+      <description>Desata hantavirus trauma por Covid Reforma</description>
+    </item>
+
+    <item>
+      <title>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</title>
+      <link>https://www.khou.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/e6f68e92be941829</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://www.khou.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894">GDELT (khou.com)</source>
+      <category>news</category>
+      
+      <description>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</description>
+    </item>
+
+    <item>
+      <title>Experts wonder Where is the CDC ? as a hantavirus outbreak unfolds on a cruise ship</title>
+      <link>https://www.wptf.com/2026/05/09/experts-wonder-where-is-the-cdc-as-a-hantavirus-outbreak-unfolds-on-a-cruise-ship/</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/f709f7c23322957f</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://www.wptf.com/2026/05/09/experts-wonder-where-is-the-cdc-as-a-hantavirus-outbreak-unfolds-on-a-cruise-ship/">GDELT (wptf.com)</source>
+      <category>news</category>
+      
+      <description>Experts wonder Where is the CDC ? as a hantavirus outbreak unfolds on a cruise ship</description>
+    </item>
+
+    <item>
+      <title>Chefe da OMS supervisionará evacuao de passageiros e tripulao do cruzeiro com hantavírus</title>
+      <link>https://jc.uol.com.br/mundo/2026/05/09/chefe-da-oms-supervisionara-evacuacao-de-passageiros-e-tripulacao-do-cruzeiro-com-hantavirus.html</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/e6d432850c432222</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://jc.uol.com.br/mundo/2026/05/09/chefe-da-oms-supervisionara-evacuacao-de-passageiros-e-tripulacao-do-cruzeiro-com-hantavirus.html">GDELT (jc.uol.com.br)</source>
+      <category>news</category>
+      
+      <description>Chefe da OMS supervisionará evacuao de passageiros e tripulao do cruzeiro com hantavírus</description>
+    </item>
+
+    <item>
+      <title>Tudo a postos para receber o navio afetado por hantavírus : Vai ser uma operao inédita</title>
+      <link>https://www.tsf.pt/mundo/artigo/tudo-a-postos-para-receber-o-navio-afetado-por-hantavirus-vai-ser-uma-operacao-inedita/18082281</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/56e80b82dbfd20e8</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://www.tsf.pt/mundo/artigo/tudo-a-postos-para-receber-o-navio-afetado-por-hantavirus-vai-ser-uma-operacao-inedita/18082281">GDELT (tsf.pt)</source>
+      <category>news</category>
+      
+      <description>Tudo a postos para receber o navio afetado por hantavírus : Vai ser uma operao inédita</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.wuft.org/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/c154978fdd0645ea</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://www.wuft.org/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (wuft.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</title>
+      <link>https://www.12newsnow.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/4da7184c39a3e923</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://www.12newsnow.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894">GDELT (12newsnow.com)</source>
+      <category>news</category>
+      
+      <description>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</description>
+    </item>
+
+    <item>
+      <title>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</title>
+      <link>https://www.kare11.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/f5281694e7429785</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://www.kare11.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894">GDELT (kare11.com)</source>
+      <category>news</category>
+      
+      <description>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</description>
+    </item>
+
+    <item>
+      <title>The country where lethal hantavirus cases are on the rise . Experts blame climate change</title>
+      <link>https://www.yahoo.com/news/articles/hantavirus-cases-nearly-doubled-argentina-040051233.html</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/c4de2c0686d38241</guid>
+      <pubDate>Sat, 09 May 2026 23:00:00 GMT</pubDate>
+      <source url="https://www.yahoo.com/news/articles/hantavirus-cases-nearly-doubled-argentina-040051233.html">GDELT (yahoo.com)</source>
+      <category>news</category>
+      
+      <description>The country where lethal hantavirus cases are on the rise . Experts blame climate change</description>
+    </item>
+
+    <item>
+      <title>Quattro isolati in Italia per l&apos;Hantavirus: il contatto sull&apos;aereo con la vittima olandese - Corriere Roma</title>
+      <link>https://news.google.com/rss/articles/CBMivwFBVV95cUxQX0xJeGdDRFp5YlNVLXJlVy1idVFmNzh3S0k5YWlsWVhtSEdMOU5uUlQ4UEFFQkZISl9OTGczRFIyRFVFaU9uQTlzSEJtMjJEb01kRjZOd3UzWENfbjVCcUZHVm9QLVBPUDJ0UHRSUlU4aldSUkxpZU1FczF0ejZyanpzLXdKRk8tSHI5UjlUYnkwV2s0T1RSNnlrVEt4RmMzSzRwS0k2RG9WcXFzbUhHSUt3V2V0SHJ3aHhTNlJGZ9IBxAFBVV95cUxNNXBYaExlLTBtdDYyck83ckJ3N0FaZ1phLVdDS012bXd5dFpacW1PWWhoQjBEYUduSnNWSnFDTnJEMVQxLTl0LXV1REFhcU5SVFlrR21hNmNIRnphaDhPWl9Hb0tud1FKMzZXaW16ZmlXT0lXRU95SlJzNU9iZ2JuTUtxQk5hX3hCSmdla01HQkhCV1VIWlU2UjdhaWN2Mmp4UUYxNVI0R2R4ZFBacTFQS1Exb19VZnNBeDNYMTltNE1UcUJk?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/f80a85edde0fa1a7</guid>
+      <pubDate>Sat, 09 May 2026 22:44:00 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMivwFBVV95cUxQX0xJeGdDRFp5YlNVLXJlVy1idVFmNzh3S0k5YWlsWVhtSEdMOU5uUlQ4UEFFQkZISl9OTGczRFIyRFVFaU9uQTlzSEJtMjJEb01kRjZOd3UzWENfbjVCcUZHVm9QLVBPUDJ0UHRSUlU4aldSUkxpZU1FczF0ejZyanpzLXdKRk8tSHI5UjlUYnkwV2s0T1RSNnlrVEt4RmMzSzRwS0k2RG9WcXFzbUhHSUt3V2V0SHJ3aHhTNlJGZ9IBxAFBVV95cUxNNXBYaExlLTBtdDYyck83ckJ3N0FaZ1phLVdDS012bXd5dFpacW1PWWhoQjBEYUduSnNWSnFDTnJEMVQxLTl0LXV1REFhcU5SVFlrR21hNmNIRnphaDhPWl9Hb0tud1FKMzZXaW16ZmlXT0lXRU95SlJzNU9iZ2JuTUtxQk5hX3hCSmdla01HQkhCV1VIWlU2UjdhaWN2Mmp4UUYxNVI0R2R4ZFBacTFQS1Exb19VZnNBeDNYMTltNE1UcUJk?oc=5">Google News (IT)</source>
+      <category>news</category>
+      <dc:coverage>IT</dc:coverage>
+      <description>Quattro isolati in Italia per l&apos;Hantavirus: il contatto sull&apos;aereo con la vittima olandese Corriere Roma</description>
+    </item>
+
+    <item>
+      <title>Countries prepare to evacuate hantavirus ship passengers - Reuters</title>
+      <link>https://news.google.com/rss/articles/CBMiyAFBVV95cUxNU1ZNUnJYSkpRM29CTFFRNzJrejhzQlBhTzlUWWFzUFZ4cUQ5dFlBQ05WSWlxNzJJRlM4YUR4Q0dqZnpWNXZQY3JWaTBJSG1BeUk3c21nanJZTktGWU50S0M4aWJlaE1XdXA3SGlxNDlkMk8xVF9nLWhiT2NjYjhiOVVZeEduR2xCSGRuMVhacmxSSlpkbWRWUDQ3a0Fhc0tBOWNxTlIxVElkY1pqbmFBamFLNlZ2Zm91a1NUMUd5TzV4emNiSnNRUw?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/e64da450f9333cd1</guid>
+      <pubDate>Sat, 09 May 2026 22:38:13 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMiyAFBVV95cUxNU1ZNUnJYSkpRM29CTFFRNzJrejhzQlBhTzlUWWFzUFZ4cUQ5dFlBQ05WSWlxNzJJRlM4YUR4Q0dqZnpWNXZQY3JWaTBJSG1BeUk3c21nanJZTktGWU50S0M4aWJlaE1XdXA3SGlxNDlkMk8xVF9nLWhiT2NjYjhiOVVZeEduR2xCSGRuMVhacmxSSlpkbWRWUDQ3a0Fhc0tBOWNxTlIxVElkY1pqbmFBamFLNlZ2Zm91a1NUMUd5TzV4emNiSnNRUw?oc=5">Google News (EN)</source>
+      <category>news</category>
+      <dc:coverage>US</dc:coverage>
+      <description>Countries prepare to evacuate hantavirus ship passengers Reuters</description>
+    </item>
+
+    <item>
+      <title>Remaining Canadians on cruise ship at the centre of hantavirus outbreak to disembark - Toronto Star</title>
+      <link>https://news.google.com/rss/articles/CBMi_wFBVV95cUxQR2NaU1E1WjFQc0s2X3g0eUhjRUJKUW10UkRqOEtnZXZ1YUhqVGZpdWo1ZUEzaE5RUUNzWVBTdkpvNWUzbkY2Q29VQWNKbm5yQW9OeXVzMTc3OEtMNFpCNmp4LU1vRUdqRTJNa25aekcweThEOThnaTVjUDR0NWd1REdjRGpFbVJDZHk3dW5WRkdpUlFhM0Z1eWFEbks4bFNXX3hUY0dqam5Ba1FlSkJpdWxpelNvYzhVUEN2SnBWNG1kdTZNWDRlQjNPWTBVZFFDZGh6ejRldWJUNGJHVVRNWGRPemFtYUN1b1NBSTh5X0FZc3VvM0gxbERQVjlEZTg?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/54b864b4509389aa</guid>
+      <pubDate>Sat, 09 May 2026 22:30:05 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMi_wFBVV95cUxQR2NaU1E1WjFQc0s2X3g0eUhjRUJKUW10UkRqOEtnZXZ1YUhqVGZpdWo1ZUEzaE5RUUNzWVBTdkpvNWUzbkY2Q29VQWNKbm5yQW9OeXVzMTc3OEtMNFpCNmp4LU1vRUdqRTJNa25aekcweThEOThnaTVjUDR0NWd1REdjRGpFbVJDZHk3dW5WRkdpUlFhM0Z1eWFEbks4bFNXX3hUY0dqam5Ba1FlSkJpdWxpelNvYzhVUEN2SnBWNG1kdTZNWDRlQjNPWTBVZFFDZGh6ejRldWJUNGJHVVRNWGRPemFtYUN1b1NBSTh5X0FZc3VvM0gxbERQVjlEZTg?oc=5">Google News (EN)</source>
+      <category>news</category>
+      <dc:coverage>CA</dc:coverage>
+      <description>Remaining Canadians on cruise ship at the centre of hantavirus outbreak to disembark Toronto Star</description>
+    </item>
+
+    <item>
+      <title>17 American passengers aboard hantavirus-hit cruise ship will quarantine in Nebraska - NBC News</title>
+      <link>https://news.google.com/rss/articles/CBMiwgFBVV95cUxQR3JCWmpqNW5ZVXJ0Ukh4MTlaQWRCYW83RTRpajcxQWt6dm5nVjNEUGpRbkdVbGVYelpEU01FbG5DZ3hkZ2RncTdPWEIxNHhtVU5qTGFuMXowTlpHY1NBWGZGcFItclpReG1qUldSTGtLUW4xalNFa05IdC1aY2pCVHVSZ290R21UcVFHZlV4THNLV3ViNlVtM001MGx6UGFSa2NheGhma2lVbmREREFpOERpSHdhbEJVQ21VejJrWUtVZw?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/523e0d5962a36f21</guid>
+      <pubDate>Sat, 09 May 2026 22:28:00 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMiwgFBVV95cUxQR3JCWmpqNW5ZVXJ0Ukh4MTlaQWRCYW83RTRpajcxQWt6dm5nVjNEUGpRbkdVbGVYelpEU01FbG5DZ3hkZ2RncTdPWEIxNHhtVU5qTGFuMXowTlpHY1NBWGZGcFItclpReG1qUldSTGtLUW4xalNFa05IdC1aY2pCVHVSZ290R21UcVFHZlV4THNLV3ViNlVtM001MGx6UGFSa2NheGhma2lVbmREREFpOERpSHdhbEJVQ21VejJrWUtVZw?oc=5">Google News (EN)</source>
+      <category>news</category>
+      <dc:coverage>US</dc:coverage>
+      <description>17 American passengers aboard hantavirus-hit cruise ship will quarantine in Nebraska NBC News</description>
+    </item>
+
+    <item>
+      <title>El mundo mira a Chile tras brote de hantavirus en crucero: revistas científicas destacan trabajo de infectólogo Pablo Vial - ADN Radio</title>
+      <link>https://news.google.com/rss/articles/CBMi7gFBVV95cUxORG0yNk1XWm9ZNi1kM1NwdVo1ZWgyb3U4bXJRbkVvdDhnS2t6a3l0UE12eWNHOEZJcnp2WXRmR3p0VmpKS0pEU1hsMW5VN1lWM1VnU0tMUEJyVy0xQUo4TWxrY2RkVWlaYVo4NXRoX19GS0puYWRTdjZudGl4N19EQVFJbHNiakU5dGd1Szc5bEVjYmZ2X0c4aGZSQWhnMTk0THFqT0xZWlc5YTNuNlljNVZjWk1sMmM2S01nSjFFNHY4ZU5XR0w3NGpUTzY1d29XTHBMSUV0UWxXZVhTSUJXSTBrM25ieFYzOG04Q19n0gGCAkFVX3lxTFBRa2hCQzhqT0c1UDhrMU1ibG1NN2ZPMWZPcE9FMFV6V2VaTUtwc0xuME54ZkVXMXZOUFZoTTNTVjE2RWdfWUI4RGIxQkk0S1Y0clQ3M2F6Mmo1aGkxTTYwRTRzRlJmc196Z0tUVHNWTU8tRXdrLXlid0h0Z2RScTRRdS04bVJGTkxwdGJMRy1fMXZLV2l5c1FjbGxyODNUZ2VuWlpmOHFmRXR4TkdYZmxYTl9FUjJrMW55Z2hiWXpON1FSeFdjRkNFX0N4TkVJUzNDY05YcWRKVXM3OGdxS0xib0djT2EwaXJVWkJROHhUWFdqVEN2dHZwQ0Y3cHdSdFR2Zw?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/76c43c8e710f5ebb</guid>
+      <pubDate>Sat, 09 May 2026 22:26:03 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMi7gFBVV95cUxORG0yNk1XWm9ZNi1kM1NwdVo1ZWgyb3U4bXJRbkVvdDhnS2t6a3l0UE12eWNHOEZJcnp2WXRmR3p0VmpKS0pEU1hsMW5VN1lWM1VnU0tMUEJyVy0xQUo4TWxrY2RkVWlaYVo4NXRoX19GS0puYWRTdjZudGl4N19EQVFJbHNiakU5dGd1Szc5bEVjYmZ2X0c4aGZSQWhnMTk0THFqT0xZWlc5YTNuNlljNVZjWk1sMmM2S01nSjFFNHY4ZU5XR0w3NGpUTzY1d29XTHBMSUV0UWxXZVhTSUJXSTBrM25ieFYzOG04Q19n0gGCAkFVX3lxTFBRa2hCQzhqT0c1UDhrMU1ibG1NN2ZPMWZPcE9FMFV6V2VaTUtwc0xuME54ZkVXMXZOUFZoTTNTVjE2RWdfWUI4RGIxQkk0S1Y0clQ3M2F6Mmo1aGkxTTYwRTRzRlJmc196Z0tUVHNWTU8tRXdrLXlid0h0Z2RScTRRdS04bVJGTkxwdGJMRy1fMXZLV2l5c1FjbGxyODNUZ2VuWlpmOHFmRXR4TkdYZmxYTl9FUjJrMW55Z2hiWXpON1FSeFdjRkNFX0N4TkVJUzNDY05YcWRKVXM3OGdxS0xib0djT2EwaXJVWkJROHhUWFdqVEN2dHZwQ0Y3cHdSdFR2Zw?oc=5">Google News (ES)</source>
+      <category>news</category>
+      <dc:coverage>CL</dc:coverage>
+      <description>El mundo mira a Chile tras brote de hantavirus en crucero: revistas científicas destacan trabajo de infectólogo Pablo Vial ADN Radio</description>
+    </item>
+
+    <item>
+      <title>Cruise ship with deadly hantavirus to evacuate passengers near Spain - USA Today</title>
+      <link>https://news.google.com/rss/articles/CBMilwFBVV95cUxNNGd4RnUyREQ0dmw5bUhGQ0tzRVQ1ckNXZFYzNElDdXBFSlV1U3hKb3RKRFNnUDVQVU40N2prVVhRaXk0MFJvTUo0bVlEZ1NEeUI4cERxdmt3SmRZemJONnhuNmpKU1IydUlWSkMtR0FwNC13MGZ0b1dhUHV3TjYtYU5RVUtkcFJUVjhLYkh4TjlrOUNvTDFz?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/79c943cfc0152ba1</guid>
+      <pubDate>Sat, 09 May 2026 22:24:00 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMilwFBVV95cUxNNGd4RnUyREQ0dmw5bUhGQ0tzRVQ1ckNXZFYzNElDdXBFSlV1U3hKb3RKRFNnUDVQVU40N2prVVhRaXk0MFJvTUo0bVlEZ1NEeUI4cERxdmt3SmRZemJONnhuNmpKU1IydUlWSkMtR0FwNC13MGZ0b1dhUHV3TjYtYU5RVUtkcFJUVjhLYkh4TjlrOUNvTDFz?oc=5">Google News (EN)</source>
+      <category>news</category>
+      <dc:coverage>US</dc:coverage>
+      <description>Cruise ship with deadly hantavirus to evacuate passengers near Spain USA Today</description>
+    </item>
+
+    <item>
+      <title>23h &quot;Confiem naquilo que vos dizemos: não é covid&quot;, garante diretor-geral da OMS - RTP</title>
+      <link>https://news.google.com/rss/articles/CBMizwFBVV95cUxNX3RsTzRxN2w3RHI5R1I2dC1QSWFMVjRUTFBTQlMyN0J4S19vUWJGcjRac1M4MUFmcXdPRlVsRXlKNnV0MmcxVS1Uc1hGZEp3UEhsSkJZN3RJQmZJN0Fab3V1VWJranI5cXZwVDU1QVJUSE9jbGJaeFBhYzBvUnVhcF94QmtCTTNXYUx4Q08zclYySHZzN1RtSk9FSUdOS1FfYW53RUxGNzctTXlldDljWDNkS3ZEVm5vYkdOQ1BiVVFIQ0hpT0p6dXBDU253dEU?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/fd07d0cf1a7287b4</guid>
+      <pubDate>Sat, 09 May 2026 22:22:02 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMizwFBVV95cUxNX3RsTzRxN2w3RHI5R1I2dC1QSWFMVjRUTFBTQlMyN0J4S19vUWJGcjRac1M4MUFmcXdPRlVsRXlKNnV0MmcxVS1Uc1hGZEp3UEhsSkJZN3RJQmZJN0Fab3V1VWJranI5cXZwVDU1QVJUSE9jbGJaeFBhYzBvUnVhcF94QmtCTTNXYUx4Q08zclYySHZzN1RtSk9FSUdOS1FfYW53RUxGNzctTXlldDljWDNkS3ZEVm5vYkdOQ1BiVVFIQ0hpT0p6dXBDU253dEU?oc=5">Google News (PT)</source>
+      <category>news</category>
+      <dc:coverage>PT</dc:coverage>
+      <description>23h &quot;Confiem naquilo que vos dizemos: não é covid&quot;, garante diretor-geral da OMS RTP</description>
+    </item>
+
+    <item>
+      <title>In isolamento quattro italiani, ma il rischio hantavirus è basso - Il Manifesto</title>
+      <link>https://news.google.com/rss/articles/CBMijwFBVV95cUxNUDdQanUtQ1B4Q0VxNmlHYXJ4S1hHRy01S3p0WFRuT1ViSGNUdEtia2MtS2dMNk1ZeGdRSUhMNTBYY0xJT3F3NjVtRFg1WmdRZWNrZzRfRVZPcm9uZUM1Ul96NDRVRUNlYlZhWTdnZmNPZEZqYWxWMHRRMmFTVjZ5a1EwdGN0bS1ONkNBaGswcw?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/834bbc9dfd8f38f0</guid>
+      <pubDate>Sat, 09 May 2026 22:20:45 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMijwFBVV95cUxNUDdQanUtQ1B4Q0VxNmlHYXJ4S1hHRy01S3p0WFRuT1ViSGNUdEtia2MtS2dMNk1ZeGdRSUhMNTBYY0xJT3F3NjVtRFg1WmdRZWNrZzRfRVZPcm9uZUM1Ul96NDRVRUNlYlZhWTdnZmNPZEZqYWxWMHRRMmFTVjZ5a1EwdGN0bS1ONkNBaGswcw?oc=5">Google News (IT)</source>
+      <category>news</category>
+      <dc:coverage>IT</dc:coverage>
+      <description>In isolamento quattro italiani, ma il rischio hantavirus è basso Il Manifesto</description>
+    </item>
+
+    <item>
+      <title>한타바이러스, 코로나처럼 퍼질까?...&quot;국내 영향 제한적&quot; - YTN</title>
+      <link>https://news.google.com/rss/articles/CBMiXkFVX3lxTE5PLWIxTWsxYnBRbHRSU01xV2ZVbUYybzg1eGhMRU9tZGxodjlwUUVPR3ltdktMZEtCNUZIQmtYX3JkTjg2S1huNzB5X05rYkNWSGhaTVc2SkpaQnh1Y0E?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/e22f377d95eb5bec</guid>
+      <pubDate>Sat, 09 May 2026 22:17:00 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMiXkFVX3lxTE5PLWIxTWsxYnBRbHRSU01xV2ZVbUYybzg1eGhMRU9tZGxodjlwUUVPR3ltdktMZEtCNUZIQmtYX3JkTjg2S1huNzB5X05rYkNWSGhaTVc2SkpaQnh1Y0E?oc=5">Google News (KO)</source>
+      <category>news</category>
+      <dc:coverage>KR</dc:coverage>
+      <description>한타바이러스, 코로나처럼 퍼질까?...&quot;국내 영향 제한적&quot; YTN</description>
+    </item>
+
+    <item>
+      <title>Despliegue inédito para cercar el brote de hantavirus del ‘Hondius’ en España - La Vanguardia</title>
+      <link>https://news.google.com/rss/articles/CBMitAFBVV95cUxQeWdsLW1mSF9Sa2VPRFJZdzRIZkIxOTlKcmFrVnJrSjJTSVVneGNfeTE5bW5WNXNZZ09oMWZKR0xuZlBjMWJyUG0xZHNDWmNiYmlHcTd5RjUwMWlZQU40SEtZVk41MG1SMGxTc2NzY2hRaDY0NXFJT3hxZ0J5YkQwX2xKbkN6SzE0YXREWkFfVHhISkZPeHVFYTBUZGoxVkpkZWhmVDdHMW4zdWo5R3QyWDBKVUTSAboBQVVfeXFMT3VVMWZKeTNjUHROWG5KdlExcXpEb2Fmdkx6Sk9zcUNSbzEzRVJ4Sk5ZN0xFc3JyYkJMU0RrSUZ2VFYyQllnZEFsTnpaakpybkJsUWtGYzd5Z3oxQkNtb3l6SE8tMl9vSEdOR2Y3ZnBLamhLQVZRczRHamVTVmZLZzZBVnVaRFRxT1VPQkpOXzd0VThpZGczZ2RLdnYtd0RnUVR3bnlvQ1pzUGFFUHFmMVBNOGd3UTZGd29R?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/2dd48da4b27ce4a6</guid>
+      <pubDate>Sat, 09 May 2026 22:15:21 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMitAFBVV95cUxQeWdsLW1mSF9Sa2VPRFJZdzRIZkIxOTlKcmFrVnJrSjJTSVVneGNfeTE5bW5WNXNZZ09oMWZKR0xuZlBjMWJyUG0xZHNDWmNiYmlHcTd5RjUwMWlZQU40SEtZVk41MG1SMGxTc2NzY2hRaDY0NXFJT3hxZ0J5YkQwX2xKbkN6SzE0YXREWkFfVHhISkZPeHVFYTBUZGoxVkpkZWhmVDdHMW4zdWo5R3QyWDBKVUTSAboBQVVfeXFMT3VVMWZKeTNjUHROWG5KdlExcXpEb2Fmdkx6Sk9zcUNSbzEzRVJ4Sk5ZN0xFc3JyYkJMU0RrSUZ2VFYyQllnZEFsTnpaakpybkJsUWtGYzd5Z3oxQkNtb3l6SE8tMl9vSEdOR2Y3ZnBLamhLQVZRczRHamVTVmZLZzZBVnVaRFRxT1VPQkpOXzd0VThpZGczZ2RLdnYtd0RnUVR3bnlvQ1pzUGFFUHFmMVBNOGd3UTZGd29R?oc=5">Google News (ES)</source>
+      <category>news</category>
+      <dc:coverage>ES</dc:coverage>
+      <description>Despliegue inédito para cercar el brote de hantavirus del ‘Hondius’ en España La Vanguardia</description>
+    </item>
+
+    <item>
+      <title>Hantavirüs vakası görülen gemideki 3 Türk vatandaşı yarın Türkiyeye getirilecek</title>
+      <link>https://www.trthaber.com/haber/gundem/hantavirus-vakasi-gorulen-gemideki-3-turk-vatandasi-yarin-turkiyeye-getirilecek-944608.html</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/3fad96c9d4c560bc</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.trthaber.com/haber/gundem/hantavirus-vakasi-gorulen-gemideki-3-turk-vatandasi-yarin-turkiyeye-getirilecek-944608.html">GDELT (trthaber.com)</source>
+      <category>news</category>
+      
+      <description>Hantavirüs vakası görülen gemideki 3 Türk vatandaşı yarın Türkiyeye getirilecek</description>
+    </item>
+
+    <item>
+      <title>أخبار مصر : السيسي يفتتح المقر الجديد لجامعة سنجور بحضور ماكرون .. وزيادة 40 جنيهًا في سعر اللحم السوداني بالمجمعات الاستهلاكية .. تنسيق كامل بين البترول والكهرباء لتأمين احتياجات الصيف</title>
+      <link>https://www.vetogate.com/5652099</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/4b16dade981876d1</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.vetogate.com/5652099">GDELT (vetogate.com)</source>
+      <category>news</category>
+      
+      <description>أخبار مصر : السيسي يفتتح المقر الجديد لجامعة سنجور بحضور ماكرون .. وزيادة 40 جنيهًا في سعر اللحم السوداني بالمجمعات الاستهلاكية .. تنسيق كامل بين البترول والكهرباء لتأمين احتياجات الصيف</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.wrvo.org/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/38a922334895425f</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.wrvo.org/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (wrvo.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>Remaining Canadians on cruise ship at the centre of hantavirus outbreak to disembark</title>
+      <link>https://www.castanetkamloops.net/news/Canada/613505/Remaining-Canadians-on-cruise-ship-at-the-centre-of-hantavirus-outbreak-to-disembark</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/8d7be4f240505798</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.castanetkamloops.net/news/Canada/613505/Remaining-Canadians-on-cruise-ship-at-the-centre-of-hantavirus-outbreak-to-disembark">GDELT (castanetkamloops.net)</source>
+      <category>news</category>
+      
+      <description>Remaining Canadians on cruise ship at the centre of hantavirus outbreak to disembark</description>
+    </item>
+
+    <item>
+      <title>Spain readies for evacuations as a hantavirus - hit cruise ship heads for the Canary Islands</title>
+      <link>https://www.ksl.com/article/51494905/spain-readies-for-evacuations-as-a-hantavirus-hit-cruise-ship-heads-for-the-canary-islands</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/41b5e8d3e9d981be</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.ksl.com/article/51494905/spain-readies-for-evacuations-as-a-hantavirus-hit-cruise-ship-heads-for-the-canary-islands">GDELT (ksl.com)</source>
+      <category>news</category>
+      <dc:coverage>ES</dc:coverage>
+      <description>Spain readies for evacuations as a hantavirus - hit cruise ship heads for the Canary Islands</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.kzyx.org/npr-news/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/5f18a4cceaf57fdd</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.kzyx.org/npr-news/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (kzyx.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.wboi.org/npr-news/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/16f14535040bafd7</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.wboi.org/npr-news/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (wboi.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</title>
+      <link>https://www.ktvb.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/f86715c208f64901</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.ktvb.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894">GDELT (ktvb.com)</source>
+      <category>news</category>
+      
+      <description>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</description>
+    </item>
+
+    <item>
+      <title>With fears of hantavirus outbreak , here the real pandemic risk</title>
+      <link>https://www.yahoo.com/news/articles/fears-hantavirus-outbreak-heres-real-214723771.html</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/45dd2599b3d1871d</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.yahoo.com/news/articles/fears-hantavirus-outbreak-heres-real-214723771.html">GDELT (yahoo.com)</source>
+      <category>news</category>
+      
+      <description>With fears of hantavirus outbreak , here the real pandemic risk</description>
+    </item>
+
+    <item>
+      <title>Is there a treatment or vaccine for hantavirus ? What to know about the illness</title>
+      <link>https://www.valleynewslive.com/2026/05/09/is-there-treatment-or-vaccine-hantavirus-what-know-about-illness/</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/a667cb2d1a82c260</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.valleynewslive.com/2026/05/09/is-there-treatment-or-vaccine-hantavirus-what-know-about-illness/">GDELT (valleynewslive.com)</source>
+      <category>news</category>
+      
+      <description>Is there a treatment or vaccine for hantavirus ? What to know about the illness</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.wvasfm.org/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/d892832865de9b61</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.wvasfm.org/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (wvasfm.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>Canary Islands brace for arrival of hantavirus - hit cruise ship</title>
+      <link>https://www.nzherald.co.nz/world/canary-islands-brace-for-arrival-of-hantavirus-hit-cruise-ship/JX2CK52ZAFGCNILCPLKESM3WS4/</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/5f40d49c0f1f7cfb</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.nzherald.co.nz/world/canary-islands-brace-for-arrival-of-hantavirus-hit-cruise-ship/JX2CK52ZAFGCNILCPLKESM3WS4/">GDELT (nzherald.co.nz)</source>
+      <category>news</category>
+      
+      <description>Canary Islands brace for arrival of hantavirus - hit cruise ship</description>
+    </item>
+
+    <item>
+      <title>Chefe da OMS diz que hantavírus não será nova pandemia</title>
+      <link>https://www.gazetadopovo.com.br/mundo/chefe-oms-elogiou-china-inicio-covid-diz-hantavirus-nao-sera-nova-pandemia/</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/4d8c0fc958136238</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.gazetadopovo.com.br/mundo/chefe-oms-elogiou-china-inicio-covid-diz-hantavirus-nao-sera-nova-pandemia/">GDELT (gazetadopovo.com.br)</source>
+      <category>news</category>
+      
+      <description>Chefe da OMS diz que hantavírus não será nova pandemia</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.kvpr.org/npr-news/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/da583e88f9246613</guid>
+      <pubDate>Sat, 09 May 2026 22:15:00 GMT</pubDate>
+      <source url="https://www.kvpr.org/npr-news/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (kvpr.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>Salud. Hantavirus en el crucero Hondius: identificaron al “paciente cero” del brote - La Voz del Interior</title>
+      <link>https://news.google.com/rss/articles/CBMitAFBVV95cUxNckcxTGlxVlRPbm1MOEF6X2k4RUhwbjJ3ZWRidEtaWkFkYXhiSFVJbFBjUmx5YnBsLU9zal9fMllCVklGTkxuemxwbmpMOHREU0xBMmNaOGk4MHBOODYxc1BWcVpkaVhFaG5PdTdRTjNTbFlpYU52MDBoMFFVZkNkc3M5Slptemk5bXdOTl9TS1JVQURhNGRwUzQxUEJtb3ByY3l5YjI1LWpWUDhhR201MWRWLXM?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/bb5b988c1dde0787</guid>
+      <pubDate>Sat, 09 May 2026 22:10:59 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMitAFBVV95cUxNckcxTGlxVlRPbm1MOEF6X2k4RUhwbjJ3ZWRidEtaWkFkYXhiSFVJbFBjUmx5YnBsLU9zal9fMllCVklGTkxuemxwbmpMOHREU0xBMmNaOGk4MHBOODYxc1BWcVpkaVhFaG5PdTdRTjNTbFlpYU52MDBoMFFVZkNkc3M5Slptemk5bXdOTl9TS1JVQURhNGRwUzQxUEJtb3ByY3l5YjI1LWpWUDhhR201MWRWLXM?oc=5">Google News (ES)</source>
+      <category>news</category>
+      <dc:coverage>AR</dc:coverage>
+      <description>Salud. Hantavirus en el crucero Hondius: identificaron al “paciente cero” del brote La Voz del Interior</description>
+    </item>
+
+    <item>
+      <title>Popular tourist hotspot angrily denies it caused hantavirus outbreak - The Independent</title>
+      <link>https://news.google.com/rss/articles/CBMirwFBVV95cUxPQzVwMGVfYTBRbG1Ca3FBeDJqXzB1c3NYUUJvUmljVENNQjhZX1lqYzd3U1NRMHZhN09fUGxVc0hQM3Nvc0gxLXUwaU1NNGV4cmhickRzNEdzejJUWGJTTXdEcEx2TnhOaDF2VGdzanJCem1YOFN2ZE9jTEJWMW5JREZ3RUZPY2pCZ0trVmx6MGRnaXAxYkFTN01CQ1RTNF9ZbGxoY2w3akZRaURIUkEw?oc=5</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/9cf6497cb9bb258d</guid>
+      <pubDate>Sat, 09 May 2026 22:01:00 GMT</pubDate>
+      <source url="https://news.google.com/rss/articles/CBMirwFBVV95cUxPQzVwMGVfYTBRbG1Ca3FBeDJqXzB1c3NYUUJvUmljVENNQjhZX1lqYzd3U1NRMHZhN09fUGxVc0hQM3Nvc0gxLXUwaU1NNGV4cmhickRzNEdzejJUWGJTTXdEcEx2TnhOaDF2VGdzanJCem1YOFN2ZE9jTEJWMW5JREZ3RUZPY2pCZ0trVmx6MGRnaXAxYkFTN01CQ1RTNF9ZbGxoY2w3akZRaURIUkEw?oc=5">Google News (EN)</source>
+      <category>news</category>
+      <dc:coverage>GB</dc:coverage>
+      <description>Popular tourist hotspot angrily denies it caused hantavirus outbreak The Independent</description>
+    </item>
+
+    <item>
+      <title>Hantavirüs tespit edilmişti ... Sağlık Bakanlığı : Gemideki 3 Türk vatandaşı getirilecek</title>
+      <link>https://www.hurriyet.com.tr/gundem/hantavirus-tespit-edilmisti-saglik-bakanligi-gemideki-3-turk-vatandasi-getirilecek-43170126</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/a37d9379dae29040</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.hurriyet.com.tr/gundem/hantavirus-tespit-edilmisti-saglik-bakanligi-gemideki-3-turk-vatandasi-getirilecek-43170126">GDELT (hurriyet.com.tr)</source>
+      <category>news</category>
+      
+      <description>Hantavirüs tespit edilmişti ... Sağlık Bakanlığı : Gemideki 3 Türk vatandaşı getirilecek</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.kjzz.org/npr-top-stories/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/2e49d28d2aa19eb9</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.kjzz.org/npr-top-stories/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (kjzz.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>Hantavírus : Cidadão português não pediu repatriamento e seguirá no cruzeiro até aos Países Baixos</title>
+      <link>https://expresso.pt/Sade/2026-05-09-hantavirus-cidadao-portugues-nao-pediu-repatriamento-e-seguira-no-cruzeiro-ate-aos-paises-baixos-6080a373</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/3c7ce53eb40ae944</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://expresso.pt/Sade/2026-05-09-hantavirus-cidadao-portugues-nao-pediu-repatriamento-e-seguira-no-cruzeiro-ate-aos-paises-baixos-6080a373">GDELT (expresso.pt)</source>
+      <category>news</category>
+      
+      <description>Hantavírus : Cidadão português não pediu repatriamento e seguirá no cruzeiro até aos Países Baixos</description>
+    </item>
+
+    <item>
+      <title>Remaining Canadians on cruise ship at the centre of hantavirus outbreak to disembark</title>
+      <link>https://www.winnipegsun.com/national-news/remaining-canadians-on-cruise-ship-at-the-centre-of-hantavirus-outbreak-to-disembark/article_6eb3e782-666f-5bc3-80d2-13b5caecfaed.html</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/175ae33553ad4a26</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.winnipegsun.com/national-news/remaining-canadians-on-cruise-ship-at-the-centre-of-hantavirus-outbreak-to-disembark/article_6eb3e782-666f-5bc3-80d2-13b5caecfaed.html">GDELT (winnipegsun.com)</source>
+      <category>news</category>
+      
+      <description>Remaining Canadians on cruise ship at the centre of hantavirus outbreak to disembark</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.kunm.org/npr-news/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/941219947422f592</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.kunm.org/npr-news/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (kunm.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>Remaining Canadians on cruise ship at the centre of hantavirus outbreak to disembark</title>
+      <link>https://www.pentictonherald.ca/news/national_news/article_5a2abc72-4efe-5eba-86cf-bf5d0c2dba8b.html</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/b7ea287e5766ef0e</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.pentictonherald.ca/news/national_news/article_5a2abc72-4efe-5eba-86cf-bf5d0c2dba8b.html">GDELT (pentictonherald.ca)</source>
+      <category>news</category>
+      
+      <description>Remaining Canadians on cruise ship at the centre of hantavirus outbreak to disembark</description>
+    </item>
+
+    <item>
+      <title>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</title>
+      <link>https://www.ksdk.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/daff5bf8a8df41c8</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.ksdk.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894">GDELT (ksdk.com)</source>
+      <category>news</category>
+      
+      <description>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</description>
+    </item>
+
+    <item>
+      <title>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</title>
+      <link>https://www.localmemphis.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/21db55829a62f3ea</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.localmemphis.com/article/news/nation-world/americans-aboard-hantavirus-cruise-ship-quarantine-nebraska/507-1ba76620-9a90-445d-8de8-455d65b45894">GDELT (localmemphis.com)</source>
+      <category>news</category>
+      
+      <description>17 Americans aboard hantavirus cruise ship may quarantine in Nebraska</description>
+    </item>
+
+    <item>
+      <title>CDC says threat of widespread outbreak of hantavirus remains low</title>
+      <link>https://www.kmxt.org/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/6e1577b623e6c386</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.kmxt.org/2026-05-09/cdc-says-threat-of-widespread-outbreak-of-hantavirus-remains-low">GDELT (kmxt.org)</source>
+      <category>news</category>
+      
+      <description>CDC says threat of widespread outbreak of hantavirus remains low</description>
+    </item>
+
+    <item>
+      <title>Death Ship Fears grow after deadly virus outbreak on cruise vessel</title>
+      <link>https://www.albawaba.com/news/death-ship-fears-grow-after-deadly-virus-1627172</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/e9b5885693e962fc</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.albawaba.com/news/death-ship-fears-grow-after-deadly-virus-1627172">GDELT (albawaba.com)</source>
+      <category>news</category>
+      
+      <description>Death Ship Fears grow after deadly virus outbreak on cruise vessel</description>
+    </item>
+
+    <item>
+      <title>Sağlık Bakanlığı ndan Hantavirüs açıklaması</title>
+      <link>https://www.dunya.com/gundem/saglik-bakanligindan-hantavirus-aciklamasi-haberi-824577</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/c00238aa49326888</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.dunya.com/gundem/saglik-bakanligindan-hantavirus-aciklamasi-haberi-824577">GDELT (dunya.com)</source>
+      <category>news</category>
+      
+      <description>Sağlık Bakanlığı ndan Hantavirüs açıklaması</description>
+    </item>
+
+    <item>
+      <title>الصحة العالمية : خطر تفشّي فيروس هانتا محدود جدا</title>
+      <link>https://www.alwatanvoice.com/arabic/news/2026/05/09/1553155.html</link>
+      <guid isPermaLink="false">https://hantaflow.com/signal/e079a89443e64b6e</guid>
+      <pubDate>Sat, 09 May 2026 22:00:00 GMT</pubDate>
+      <source url="https://www.alwatanvoice.com/arabic/news/2026/05/09/1553155.html">GDELT (alwatanvoice.com)</source>
+      <category>news</category>
+      
+      <description>الصحة العالمية : خطر تفشّي فيروس هانتا محدود جدا</description>
+    </item>
+  </channel>
+</rss>

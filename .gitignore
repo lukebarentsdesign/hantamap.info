@@ -1,0 +1,49 @@
+# Dependencies
+node_modules/
+jspm_packages/
+packages/
+
+# Backend specific
+backend/venv/
+venv/
+env/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Databases
+*.sqlite
+*.db
+*.sqlite3
+data/*.sqlite
+data/db.sqlite
+
+# IDEs / Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build / Dist
+dist/
+build/
+.next/
+out/
+
+# Secrets
+.env
+.env.local
+.env.*.local
