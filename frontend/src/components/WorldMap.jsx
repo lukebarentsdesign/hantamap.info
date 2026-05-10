@@ -3,6 +3,7 @@ import { MapContainer, TileLayer, CircleMarker,
 import { GEO_COORDS } from './geoCoords'
 import { getCountryName, getIsoCode } from './flagUtils'
 import { MV_HONDIUS_REPATRIATION_POINTS, MV_HONDIUS_ROUTE_POINTS } from './mvHondiusData'
+import { getRegionStatus } from './statusLogic'
 
 const ROUTE = MV_HONDIUS_ROUTE_POINTS.map(point => point.coords)
 
@@ -134,20 +135,34 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
         });
         const isHot = hotSignals.length > 0;
 
+        // NEW: Derive visual state dynamically from text intel
+        const textStatus = getRegionStatus(regionSignals);
+        
+        // If the hardcoded flag 'isConfirmed' is on, upgrade to Confirmed color if not already Deaths
+        let finalColor = textStatus.color;
+        let finalLabel = textStatus.label;
+        if (isConfirmed && textStatus.priority < 3) {
+          finalColor = '#dc2626'; // Forced Confirmed
+          finalLabel = 'Confirmed Active';
+        }
+
         let markerClass = "";
-        if (isConfirmed) markerClass = "pulse-marker";
+        if (finalColor === '#dc2626' || finalColor === '#000000') markerClass = "pulse-marker";
         else if (isHot) markerClass = "heat-signal";
+
+        // Boost size slightly for severe categories
+        const markerRadius = (finalColor === '#000000' || finalColor === '#dc2626') ? 8 : 6;
 
         return (
           <CircleMarker 
             key={iso} 
             center={coords} 
-            radius={isConfirmed ? 8 : 6}
-            fillColor={isConfirmed ? '#f97316' : (isHot ? '#0284c7' : '#0ea5e9')}
+            radius={markerRadius}
+            fillColor={finalColor}
             color="white"
             weight={2}
             opacity={1}
-            fillOpacity={isConfirmed ? 0.9 : 0.6}
+            fillOpacity={finalColor === '#000000' ? 1 : 0.8}
             className={markerClass}
             eventHandlers={{
               click: () => onRegionClick && onRegionClick(iso)
@@ -155,28 +170,25 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
           >
             {!isSmallViewport && (
               <Tooltip direction="top" offset={[0, -5]} opacity={1}>
-                <div style={{ 
-                  fontWeight: 'bold', 
-                  color: 'var(--text)',
-                  fontSize: '12px',
-                  marginBottom: '4px'
+                <div style={{
+                  fontWeight: 800, 
+                  color: 'var(--text)', 
+                  fontSize: '12px', 
+                  marginBottom: '2px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px'
                 }}>
+                  <span style={{
+                    width:'8px', height:'8px', borderRadius:'50%', background:finalColor, display:'inline-block'
+                  }} />
                   {name}
                 </div>
-                <div style={{ 
-                  fontSize: '11px', 
-                  color: 'var(--text2)',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '2px'
-                }}>
-                  {isConfirmed && (
-                    <div style={{ color: '#f97316', fontWeight: 600 }}>• WHO Confirmed</div>
-                  )}
-                  <div>• Total Signals: {regionSignals.length}</div>
-                  {isHot && (
-                    <div style={{ color: '#0284c7', fontWeight: 600 }}>• Recent Heat detected</div>
-                  )}
+                <div style={{fontSize: '11px', color: 'var(--text2)', marginBottom:'4px'}}>
+                  {finalLabel}
+                </div>
+                <div style={{fontSize: '10px', color: 'var(--text3)'}}>
+                  {regionSignals.length} signal{regionSignals.length === 1 ? '' : 's'} active
                 </div>
               </Tooltip>
             )}
@@ -192,27 +204,28 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
       display: 'flex',
       flexDirection: isDashboard ? 'column' : 'row',
       gap: isDashboard ? '8px' : '20px',
-      paddingTop: isDashboard ? '0' : '12px'
+      paddingTop: isDashboard ? '0' : '12px',
+      flexWrap: 'wrap'
     }}>
       <div className="legend-i">
-        <span className="legend-dot pulse-marker" style={{ background: '#f97316' }} aria-hidden="true" />
-        Confirmed Area (Active Watch)
+        <span className="legend-dot" style={{ background: '#000000' }} aria-hidden="true" />
+        Fatalities
       </div>
       <div className="legend-i">
-        <span className="legend-dot heat-signal" style={{ background: '#0284c7' }} aria-hidden="true" />
-        Recent Signals (&lt;72h)
+        <span className="legend-dot pulse-marker" style={{ background: '#dc2626' }} aria-hidden="true" />
+        Confirmed
+      </div>
+      <div className="legend-i">
+        <span className="legend-dot" style={{ background: '#ea580c' }} aria-hidden="true" />
+        Pending / Flights
+      </div>
+      <div className="legend-i">
+        <span className="legend-dot" style={{ background: '#f59e0b' }} aria-hidden="true" />
+        Suspected
       </div>
       <div className="legend-i">
         <span className="legend-dot" style={{ background: '#0ea5e9', opacity:0.6 }} aria-hidden="true" />
-        Monitoring Coverage
-      </div>
-      <div className="legend-i">
-        <span className="legend-line" style={{ borderTop: '1.5px dashed #ea580c' }} aria-hidden="true" />
-        MV Hondius Route
-      </div>
-      <div className="legend-i">
-        <span className="legend-dot" style={{ background: '#14b8a6' }} aria-hidden="true" />
-        Current Docking
+        Monitoring
       </div>
     </div>
   )

@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
 import { getCountryName, getCountryFlag } from './flagUtils'
+import { getSignalStatus } from './statusLogic'
 
 
 function ago(iso) {
@@ -105,6 +106,22 @@ export function SignalFeed({ signals, onArticleClick }) {
                             {s.title}
                           </button>
                           <div className="sig-meta" style={{marginTop:'4px', display:'flex', alignItems:'center', gap:'6px'}}>
+                            {(() => {
+                              const st = getSignalStatus(`${s.title || ""} ${s.snippet || ""} ${s.content || ""}`);
+                              if (st.id === 'monitoring') return null;
+                              return (
+                                <span className="badge-lite" style={{ 
+                                  borderColor: st.color, 
+                                  color: st.id === 'death' ? '#fff' : st.color, 
+                                  background: st.id === 'death' ? '#000' : 'transparent',
+                                  fontWeight: 600,
+                                  textTransform: 'uppercase',
+                                  fontSize: '9px'
+                                }}>
+                                  {st.label}
+                                </span>
+                              );
+                            })()}
                             <span className={`tier-tag t${s.tier || 3}`}>T{s.tier || 3}</span>
                             <span className="badge-lite">{s.source}</span>
                             {s.language && <span className="badge-lite text-mono">{s.language.toUpperCase()}</span>}
