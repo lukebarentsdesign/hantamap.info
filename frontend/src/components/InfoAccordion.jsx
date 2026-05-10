@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { EmailCapture } from './EmailCapture'
 
 const ITEMS = [
   {
@@ -126,11 +125,6 @@ export function InfoAccordion() {
             ))}
           </div>
         </div>
-      </div>
-      
-      {/* Email Capture Hook */}
-      <div style={{ marginTop: '40px' }}>
-        <EmailCapture />
       </div>
     </section>
   )

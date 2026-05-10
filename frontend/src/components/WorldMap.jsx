@@ -1,114 +1,223 @@
 import { MapContainer, TileLayer, CircleMarker,
          Polyline, Tooltip } from 'react-leaflet'
+import { GEO_COORDS } from './geoCoords'
+import { getCountryName, getIsoCode } from './flagUtils'
+import { MV_HONDIUS_REPATRIATION_POINTS, MV_HONDIUS_ROUTE_POINTS } from './mvHondiusData'
 
-const LOCATIONS = [
-  { name: 'South Africa',   c: [-30.56,  22.94], iso: 'ZA' },
-  { name: 'Netherlands',    c: [ 52.37,   4.90], iso: 'NL' },
-  { name: 'Germany',        c: [ 51.17,  10.45], iso: 'DE' },
-  { name: 'Spain',          c: [ 40.42,  -3.70], iso: 'ES' },
-  { name: 'Switzerland',    c: [ 46.82,   8.23], iso: 'CH' },
-  { name: 'United Kingdom', c: [ 51.51,  -0.13], iso: 'GB' },
-  { name: 'France',         c: [ 46.23,   2.21], iso: 'FR' },
-  { name: 'Italy',          c: [ 41.87,  12.57], iso: 'IT' },
-  { name: 'Poland',         c: [ 51.92,  19.15], iso: 'PL' },
-  { name: 'Argentina',      c: [-38.42, -63.62], iso: 'AR' },
-  { name: 'Canada',         c: [ 56.13,-106.35], iso: 'CA' },
-  { name: 'United States',  c: [ 37.09, -95.71], iso: 'US' },
-  { name: 'Australia',      c: [-25.27, 133.78], iso: 'AU' },
-  { name: 'Turkey',         c: [ 38.96,  35.24], iso: 'TR' },
-  { name: 'Greece',         c: [ 39.07,  21.82], iso: 'GR' },
-  { name: 'Portugal',       c: [ 39.39,  -8.22], iso: 'PT' },
-  { name: 'Brazil',         c: [-14.23, -51.92], iso: 'BR' },
-  { name: 'Chile',          c: [-35.67, -71.54], iso: 'CL' },
-  { name: 'Russia',         c: [ 61.52, 105.31], iso: 'RU' },
-  { name: 'South Korea',    c: [ 35.90, 127.76], iso: 'KR' },
-]
-
-const ROUTE = [
-  [-54.8, -68.3],
-  [-15.9,  -5.7],
-  [ 14.9, -23.5],
-  [ 28.3, -16.5],
-]
+const ROUTE = MV_HONDIUS_ROUTE_POINTS.map(point => point.coords)
 
 const TILES = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
 const ATTR = '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>'
 
 export function WorldMap({ whoCountries = [], signals = [], isDashboard = false, onRegionClick }) {
-  const normalizedConfirmed = whoCountries.map(c => c.toLowerCase())
+  // 1. Map string names to standardized ISO codes
+  const confirmedIsoCodes = new Set(
+    whoCountries.map(c => getIsoCode(c.toString()).toUpperCase())
+  )
+
+  // 2. Accumulate all dynamic ISOs from incoming signals
+  const signalIsoCodes = new Set(
+    signals
+      .filter(s => s.country_iso2 && s.country_iso2.length === 2)
+      .map(s => s.country_iso2.toUpperCase())
+  )
+
+  // 3. Union them to create the complete reactive location set
+  const activeIsos = new Set([...confirmedIsoCodes, ...signalIsoCodes])
+  
+  // 4. Construct explicit rendering payload anchored by valid coordinate geometry
+  const locations = Array.from(activeIsos)
+    .map(iso => {
+      const coords = GEO_COORDS[iso];
+      if (!coords) return null;
+      return {
+        iso,
+        name: getCountryName(iso),
+        coords,
+        isConfirmed: confirmedIsoCodes.has(iso),
+        regionSignals: signals.filter(s => s.country_iso2?.toUpperCase() === iso)
+      };
+    })
+    .filter(Boolean);
 
   const renderMap = () => (
     <MapContainer
-      center={[20, 0]} zoom={2} minZoom={1}
-      style={{ height: '100%', width: '100%', background: '#f5f7fa' }}
+      center={[20, 0]} 
+      zoom={2.5}
+      zoomSnap={0.25}
+      minZoom={2}
+      maxBounds={[[-85, -180], [85, 180]]}
+      maxBoundsViscosity={1.0}
+      worldCopyJump={false}
+      style={{ height: '100%', width: '100%', background: '#dce6f2' }}
       scrollWheelZoom={true}
     >
-      <TileLayer url={TILES} attribution={ATTR} subdomains="abcd" maxZoom={19} />
+      <TileLayer 
+        url={TILES} 
+        attribution={ATTR} 
+        subdomains="abcd" 
+        maxZoom={19} 
+        noWrap={true} 
+      />
 
-      {LOCATIONS.map(({ name, c, iso }) => {
-        const isConfirmed = normalizedConfirmed.includes(name.toLowerCase());
-        const regionSignals = signals.filter(s => s.country_iso2 === iso);
-        const signalCount = regionSignals.length;
-        
+      <Polyline
+        positions={ROUTE}
+        color="#ea580c"
+        dashArray="6, 8"
+        weight={2}
+        opacity={0.78}
+      >
+        <Tooltip sticky>MV Hondius route and exposure chronology</Tooltip>
+      </Polyline>
+
+      {MV_HONDIUS_ROUTE_POINTS.map((point) => (
+        <CircleMarker
+          key={point.name}
+          center={point.coords}
+          radius={point.tone === 'current' ? 9 : point.tone === 'high' ? 8 : 6}
+          fillColor={point.tone === 'current' ? '#14b8a6' : point.tone === 'high' || point.tone === 'origin' ? '#ea580c' : '#f59e0b'}
+          color="#ffffff"
+          weight={2}
+          opacity={1}
+          fillOpacity={0.86}
+          className={point.tone === 'current' || point.tone === 'high' ? 'pulse-marker' : ''}
+        >
+          <Tooltip direction="top" offset={[0, -5]} opacity={1}>
+            <div style={{fontWeight: 800, color: 'var(--text)', fontSize: '12px', marginBottom: '4px'}}>
+              {point.name}
+            </div>
+            <div style={{fontSize: '11px', color: 'var(--text2)', lineHeight: 1.45}}>
+              <strong style={{color: 'var(--accent)'}}>{point.label}</strong>
+              <br />
+              {point.note}
+            </div>
+          </Tooltip>
+        </CircleMarker>
+      ))}
+
+      {MV_HONDIUS_REPATRIATION_POINTS.map(([name, coords, note]) => (
+        <CircleMarker
+          key={name}
+          center={coords}
+          radius={5}
+          fillColor="#0284c7"
+          color="#ffffff"
+          weight={1.5}
+          opacity={1}
+          fillOpacity={0.75}
+        >
+          <Tooltip direction="top" offset={[0, -5]} opacity={1}>
+            <div style={{fontWeight: 800, color: 'var(--text)', fontSize: '12px', marginBottom: '4px'}}>
+              {name}
+            </div>
+            <div style={{fontSize: '11px', color: 'var(--text2)'}}>{note}</div>
+          </Tooltip>
+        </CircleMarker>
+      ))}
+
+      {locations.map(({ name, coords, iso, isConfirmed, regionSignals }) => {
+        // Calculate Signal Heat (recency check: 72 hours)
+        const now = new Date();
+        const hotSignals = regionSignals.filter(s => {
+          if (!s.published_at) return false;
+          const deltaHrs = (now - new Date(s.published_at)) / (1000 * 60 * 60);
+          return deltaHrs >= 0 && deltaHrs <= 72;
+        });
+        const isHot = hotSignals.length > 0;
+
+        let markerClass = "";
+        if (isConfirmed) markerClass = "pulse-marker";
+        else if (isHot) markerClass = "heat-signal";
+
         return (
           <CircleMarker 
-            key={name} 
-            center={c} 
-            radius={isConfirmed ? 12 : 7}
+            key={iso} 
+            center={coords} 
+            radius={isConfirmed ? 8 : 6}
+            fillColor={isConfirmed ? '#f97316' : (isHot ? '#0284c7' : '#0ea5e9')}
+            color="white"
+            weight={2}
+            opacity={1}
+            fillOpacity={isConfirmed ? 0.9 : 0.6}
+            className={markerClass}
             eventHandlers={{
-              click: () => { if (onRegionClick && iso) onRegionClick(iso); }
+              click: () => onRegionClick && onRegionClick(iso)
             }}
-            pathOptions={
-              isConfirmed 
-                ? { color:'#e85d3c', fillColor:'#e85d3c', fillOpacity:0.65, weight:1.5, className: 'pulse-marker' }
-                : { color:'#a0aabf', fillColor:'#cbd2df', fillOpacity:0.5, weight:1 }
-            }
-            style={{ cursor: 'pointer' }}
           >
-            <Tooltip direction="top" offset={[0,-5]} className="custom-map-tooltip">
-              <div style={{ fontFamily: 'var(--sans)', fontSize: '12px', lineHeight: '1.4', minWidth:'140px' }}>
-                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'4px' }}>
-                   <strong style={{ color: '#1a1d23', fontSize: '13px' }}>{name}</strong>
-                   <span style={{ fontSize:'10px', fontWeight:800, color:'#64748b' }}>{iso}</span>
-                </div>
-                {isConfirmed ? (
-                  <div style={{ color: '#d94423', fontWeight: '700', display:'flex', alignItems:'center', gap:'4px' }}>
-                    <span style={{ fontSize:'16px' }}>●</span> WHO CONFIRMED ACTIVE
-                  </div>
-                ) : (
-                  <div style={{ color: '#5a6575', fontStyle:'italic' }}>Passively Monitored</div>
+            <Tooltip direction="top" offset={[0, -5]} opacity={1}>
+              <div style={{ 
+                fontWeight: 'bold', 
+                color: 'var(--text)',
+                fontSize: '12px',
+                marginBottom: '4px'
+              }}>
+                {name}
+              </div>
+              <div style={{ 
+                fontSize: '11px', 
+                color: 'var(--text2)',
+                display: 'flex',
+                flexDirection: 'column',
+                gap: '2px'
+              }}>
+                {isConfirmed && (
+                  <div style={{ color: '#f97316', fontWeight: 600 }}>• WHO Confirmed</div>
                 )}
-                
-                {signalCount > 0 && (
-                  <div style={{ marginTop:'6px', fontSize:'11px', color:'#475569' }}>
-                    <strong>{signalCount}</strong> Intelligence Signal{signalCount !== 1 ? 's' : ''} detected.
-                  </div>
+                <div>• Total Signals: {regionSignals.length}</div>
+                {isHot && (
+                  <div style={{ color: '#0284c7', fontWeight: 600 }}>• Recent Heat detected</div>
                 )}
-                
-                <div style={{ marginTop: '8px', paddingTop:'4px', borderTop:'1px solid #eee', fontSize:'10px', color:'#2563eb', fontWeight:600 }}>
-                  🖱️ Click marker for regional intelligence
-                </div>
               </div>
             </Tooltip>
           </CircleMarker>
-        );
+        )
       })}
 
-      <Polyline positions={ROUTE} pathOptions={{ color:'#e85d3c', weight:1.5, opacity:0.5, dashArray:'4 6' }} />
-
-      <CircleMarker center={[28.3, -16.5]} radius={8}
-        pathOptions={{ color:'#1a1d23', fillColor:'#e85d3c', fillOpacity:1, weight:1.5 }}>
-        <Tooltip permanent direction="top" offset={[0,-8]}>
-          <span style={{ fontWeight:600, fontSize:'12px' }}>MV Hondius</span>
-        </Tooltip>
-      </CircleMarker>
     </MapContainer>
+  )
+
+  const renderLegend = () => (
+    <div className="map-legend" role="legend" style={{
+      display: 'flex',
+      flexDirection: isDashboard ? 'column' : 'row',
+      gap: isDashboard ? '8px' : '20px',
+      paddingTop: isDashboard ? '0' : '12px'
+    }}>
+      <div className="legend-i">
+        <span className="legend-dot pulse-marker" style={{ background: '#f97316' }} aria-hidden="true" />
+        Confirmed Area (Active Watch)
+      </div>
+      <div className="legend-i">
+        <span className="legend-dot heat-signal" style={{ background: '#0284c7' }} aria-hidden="true" />
+        Recent Signals (&lt;72h)
+      </div>
+      <div className="legend-i">
+        <span className="legend-dot" style={{ background: '#0ea5e9', opacity:0.6 }} aria-hidden="true" />
+        Monitoring Coverage
+      </div>
+      <div className="legend-i">
+        <span className="legend-line" style={{ borderTop: '1.5px dashed #ea580c' }} aria-hidden="true" />
+        MV Hondius Route
+      </div>
+      <div className="legend-i">
+        <span className="legend-dot" style={{ background: '#14b8a6' }} aria-hidden="true" />
+        Current Docking
+      </div>
+    </div>
   )
 
   if (isDashboard) {
     return (
-      <div className="dash-map-container">
+      <div className="dash-map-container" style={{ position: 'relative' }}>
         {renderMap()}
+        <div style={{
+          position:'absolute', bottom:'20px', left:'20px', zIndex: 1000,
+          background:'var(--glass)', backdropFilter:'blur(10px)',
+          padding:'16px', borderRadius:'12px', border:'1px solid var(--border)',
+          boxShadow:'0 8px 24px rgba(0,0,0,0.06)'
+        }}>
+           {renderLegend()}
+        </div>
       </div>
     )
   }
@@ -121,24 +230,11 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
           {renderMap()}
         </div>
         
-        <div className="map-legend" role="legend">
-          <div className="legend-i">
-            <span className="legend-dot" style={{ background: '#e85d3c' }} aria-hidden="true" />
-            WHO Confirmed Cases
-          </div>
-          <div className="legend-i">
-            <span className="legend-dot" style={{ background: '#cbd2df', border: '1px solid #a0aabf' }} aria-hidden="true" />
-            News monitoring only
-          </div>
-          <div className="legend-i">
-            <span className="legend-line" style={{ borderTop: '1.5px dashed #e85d3c' }} aria-hidden="true" />
-            Ship vector
-          </div>
-        </div>
+        {renderLegend()}
 
         <p className="map-note">
-          Passive locations indicate automated RSS feed monitoring coverage only, <strong>not</strong> active outbreaks. 
-          Explicit red markers identify countries with clinical laboratory confirmations verified via WHO DON.
+          Blue points indicate regions under systematic surveillance. 
+          Orange indicators identify geographies flagged by primary health authorities.
         </p>
       </div>
     </section>

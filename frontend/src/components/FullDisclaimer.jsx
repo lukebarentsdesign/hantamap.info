@@ -5,9 +5,9 @@ export function FullDisclaimer() {
         <div className="disc-box" role="note">
           <div className="disc-box-hd">
             <span aria-hidden="true" style={{ color:'var(--amber)',
-              fontSize:'13px' }}>⚠</span>
+              fontSize:'13px' }}>!</span>
             <h2 className="disc-box-title" id="disc-hd">
-              Important notices — please read
+              Important notices - please read
             </h2>
           </div>
 
@@ -25,10 +25,11 @@ export function FullDisclaimer() {
             <div className="disc-item">
               <h4>Data accuracy</h4>
               <p>
-                Confirmed case figures are sourced from WHO Disease Outbreak
-                News and may lag real-time developments. Signal counts reflect
-                monitored news mentions — not confirmed clinical cases. Data
-                may be incomplete, delayed, or contain errors.
+                Confirmed case figures should come from official structured
+                surveillance or validated official bulletins. Official notices
+                provide context, while media and Google News items are signals,
+                not confirmed clinical cases. Data may be incomplete, delayed,
+                or contain errors.
               </p>
             </div>
             <div className="disc-item">
@@ -43,10 +44,11 @@ export function FullDisclaimer() {
             <div className="disc-item">
               <h4>Attribution</h4>
               <p>
-                News signal data partially sourced from Hantaflow.com under
-                Creative Commons CC BY 4.0. Map tiles © CartoDB, data ©
-                OpenStreetMap contributors. Clinical data sourced exclusively
-                from WHO and ECDC official publications.
+                News signal data is gathered from monitored public feeds and
+                search templates. Map tiles (c) CartoDB, data (c) OpenStreetMap
+                contributors. Official source hierarchy follows the project
+                research dossier: surveillance first, official notices second,
+                media and search signals last.
               </p>
             </div>
             <div className="disc-item">
@@ -61,10 +63,10 @@ export function FullDisclaimer() {
             <div className="disc-item">
               <h4>Privacy and data</h4>
               <p>
-                Email alert addresses are stored securely and never shared
-                with third parties. This site uses no tracking cookies and
-                collects no personal data beyond voluntarily submitted email
-                addresses. Operated from the UK under UK data protection law.
+                This public dashboard does not operate a mailing list or
+                newsletter signup. The site uses no tracking cookies and is
+                intended for public situational awareness only. Operated from
+                the UK under UK data protection law.
               </p>
             </div>
           </div>
@@ -74,11 +76,11 @@ export function FullDisclaimer() {
             <div className="emerg-contacts">
               <div className="emerg-c">
                 <strong>UK</strong>
-                NHS 111 (non-emergency) · 999 (emergency)
+                NHS 111 (non-emergency) - 999 (emergency)
               </div>
               <div className="emerg-c">
                 <strong>US</strong>
-                CDC 800-232-4636 · 911 (emergency)
+                CDC 800-232-4636 - 911 (emergency)
               </div>
               <div className="emerg-c">
                 <strong>EU</strong>

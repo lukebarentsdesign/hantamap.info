@@ -45,18 +45,18 @@ def _extract_countries(text: str) -> list:
 
 
 def parse_case_counts(entries: list, current: dict) -> dict:
-    # Establish ground-truth floors from user verification
-    who_confirmed = max(current.get("who_confirmed", 0), 3)
-    who_suspected = max(current.get("who_suspected", 0), 3)
-    who_deaths    = max(current.get("who_deaths", 0), 3)
+    # Initialize from raw ingestion data without arbitrary baseline inflation
+    who_confirmed = current.get("who_confirmed", 0)
+    who_suspected = current.get("who_suspected", 0)
+    who_deaths    = current.get("who_deaths", 0)
     who_countries = current.get("who_countries", [])
     if isinstance(who_countries, str):
         who_countries = json.loads(who_countries)
 
-    authoritative = {"WHO", "WHO DON", "ECDC", "ProMED"}
-
     for entry in entries:
-        if entry.get("source") not in authoritative:
+        # Only explicitly count-capable official sources can update situation figures.
+        # Other official feeds stay in the notice/context layer.
+        if not entry.get("counting", False):
             continue
         text = f"{entry.get('title', '')} {entry.get('summary', '')}"
         
@@ -75,9 +75,11 @@ def parse_case_counts(entries: list, current: dict) -> dict:
         if s is not None and s >= who_suspected:
             who_suspected = s
 
-        for country in _extract_countries(text):
-            if country not in who_countries:
-                who_countries.append(country)
+        # Disabled automatic injection to prevent false-positive alarms from news mentions.
+        # Manual validation or targeted parser required for elevation to CONFIRMED status.
+        # for country in _extract_countries(text):
+        #     if country not in who_countries:
+        #         who_countries.append(country)
 
     return {
         "who_confirmed": who_confirmed,

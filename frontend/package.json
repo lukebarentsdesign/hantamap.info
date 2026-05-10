@@ -15,6 +15,7 @@
   },
   "scripts": {
     "dev": "vite",
+    "prebuild": "node scripts/generate-share-card.js",
     "build": "vite build",
     "preview": "vite preview"
   }

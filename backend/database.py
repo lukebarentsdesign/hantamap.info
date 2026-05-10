@@ -55,6 +55,7 @@ def init_db():
                 country_iso2 TEXT,
                 published_at TEXT,
                 ingested_at TEXT NOT NULL,
+                tier INTEGER DEFAULT 3,
                 FOREIGN KEY (snapshot_id) REFERENCES snapshots(id)
             );
 
@@ -81,6 +82,14 @@ def init_db():
             CREATE INDEX IF NOT EXISTS idx_cases_parent
                 ON cases(parent_id);
         """)
+        
+        # Self-healing migration for 'tier' column
+        try:
+            conn.execute("ALTER TABLE signals ADD COLUMN tier INTEGER DEFAULT 3")
+            print("Migrated database schema: Added 'tier' column to signals.")
+        except sqlite3.OperationalError:
+            pass # Already exists
+            
     print("Database initialised.")
 
 
@@ -144,8 +153,8 @@ def insert_signals(signals: list, snapshot_id: int):
                 conn.execute(
                     """INSERT OR IGNORE INTO signals
                        (snapshot_id, title, url, source, language,
-                        country_iso2, published_at, ingested_at)
-                       VALUES (?,?,?,?,?,?,?,?)""",
+                        country_iso2, published_at, ingested_at, tier)
+                       VALUES (?,?,?,?,?,?,?,?,?)""",
                     (
                         snapshot_id,
                         s.get("title", ""),
@@ -155,6 +164,7 @@ def insert_signals(signals: list, snapshot_id: int):
                         s.get("country_iso2", ""),
                         s.get("published_at", ""),
                         now,
+                        s.get("tier", 3),
                     )
                 )
                 if conn.execute("SELECT changes()").fetchone()[0]:

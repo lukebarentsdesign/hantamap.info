@@ -2752,6 +2752,7 @@ RESEND_API_KEY=re_xxxxxxxxxxxx     optional — alerts only send if present
 SITE_URL=https://your-domain.com   optional — used in alert email links
 FROM_EMAIL=alerts@your-domain.com  optional
 DB_PATH=./data/db.sqlite           optional — this is the default
+ADMIN_TOKEN=your_secure_token      required — secures the POST /api/v1/cases endpoint
 ```
 
 **Frontend service:**

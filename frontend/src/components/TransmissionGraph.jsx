@@ -33,6 +33,7 @@ export default function TransmissionGraph() {
         console.error("Graph load failed:", err);
         setLoading(false);
       });
+  }, []);
 
   useEffect(() => {
     if (loading || data.nodes.length === 0) return;

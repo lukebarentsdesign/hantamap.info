@@ -22,7 +22,18 @@ export function SignalFeed({ signals, onArticleClick }) {
       if (!map[key]) map[key] = { code: key, name: getCountryName(key) || 'International', items: [] }
       map[key].items.push(s)
     })
-    // Sort by count descending, then name
+    // Sort items WITHIN groups by Tier first, then most recent
+    Object.values(map).forEach(group => {
+      group.items.sort((a, b) => {
+        const tierA = a.tier || 3;
+        const tierB = b.tier || 3;
+        if (tierA !== tierB) return tierA - tierB;
+        const timeA = new Date(a.published_at || a.ingested_at).getTime();
+        const timeB = new Date(b.published_at || b.ingested_at).getTime();
+        return timeB - timeA;
+      });
+    });
+    // Sort groups by count descending, then name
     return Object.values(map).sort((a, b) => b.items.length - a.items.length || a.name.localeCompare(b.name))
   }, [signals])
 
@@ -83,7 +94,7 @@ export function SignalFeed({ signals, onArticleClick }) {
                           <button 
                             onClick={(e) => {
                               e.preventDefault();
-                              if (onArticleClick) onArticleClick(s.url, s.title);
+                              if (onArticleClick) onArticleClick(s);
                             }}
                             style={{
                               background:'none', border:'none', padding:0, cursor:'pointer', 
@@ -94,8 +105,12 @@ export function SignalFeed({ signals, onArticleClick }) {
                             {s.title}
                           </button>
                           <div className="sig-meta" style={{marginTop:'4px', display:'flex', alignItems:'center', gap:'6px'}}>
+                            <span className={`tier-tag t${s.tier || 3}`}>T{s.tier || 3}</span>
                             <span className="badge-lite">{s.source}</span>
                             {s.language && <span className="badge-lite text-mono">{s.language.toUpperCase()}</span>}
+                            {s.language && s.language !== 'en' && (
+                              <span className="badge-lite text-mono">EN TRANSLATE</span>
+                            )}
                             <span className="sig-time" style={{marginLeft:'auto'}}>
                               {ago(s.published_at ?? s.ingested_at)}
                             </span>
@@ -112,8 +127,8 @@ export function SignalFeed({ signals, onArticleClick }) {
       </div>
 
       <p className="signals-note" role="note">
-        Signals reflect monitored news mentions from 24+ RSS feeds.
-        Toggle region rows to view detailed items.
+        Signals reflect monitored official, media and Google News feeds.
+        Counts and clinical status still require official-source validation.
       </p>
     </section>
   )

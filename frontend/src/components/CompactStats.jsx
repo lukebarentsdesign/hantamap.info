@@ -1,40 +1,43 @@
+import { MV_HONDIUS_STATS } from './mvHondiusData'
+
 export function CompactStats({ snapshot }) {
-  const s = snapshot?.snapshot ?? {}
-  const {
-    who_confirmed = 0, 
-    who_deaths = 0, 
-    who_suspected = 0,
-    total_signals = 0,
-    active_countries = 0,
-    feeds_healthy = 0
-  } = s
+  const cases = MV_HONDIUS_STATS.totalCases
+  const confirmed = MV_HONDIUS_STATS.confirmed
+  const probable = MV_HONDIUS_STATS.probable
+  const deaths = MV_HONDIUS_STATS.deaths
+  const aboard = MV_HONDIUS_STATS.aboard
+  const tracked = MV_HONDIUS_STATS.tracked
 
   return (
     <div style={{ display:'flex', flexDirection:'column', alignItems:'flex-start' }}>
       <div className="top-stats">
-        <div className="stat-box" title="Individuals positively diagnosed via laboratory validation.">
-          <span className="stat-val text-orange">{who_confirmed}</span>
-          <span className="stat-key">Confirmed <sup style={{opacity:0.5, fontSize:'8px'}}>ⓘ</sup></span>
+        <div className="stat-box" title="WHO DON600 total cases as of 8 May 2026.">
+          <span className="stat-val text-orange">{cases}</span>
+          <span className="stat-key">Total cases</span>
         </div>
-        <div className="stat-box" title="Cases undergoing clinical evaluation without completed verification.">
-          <span className="stat-val text-amber">{who_suspected || 0}</span>
-          <span className="stat-key">Suspected <sup style={{opacity:0.5, fontSize:'8px'}}>ⓘ</sup></span>
+        <div className="stat-box" title="WHO DON600 laboratory-confirmed Andes virus infections.">
+          <span className="stat-val text-orange">{confirmed}</span>
+          <span className="stat-key">Confirmed</span>
         </div>
-        <div className="stat-box" title="Total verified causalities explicitly linked by authoritative sources.">
-          <span className="stat-val">{who_deaths}</span>
-          <span className="stat-key">Deaths <sup style={{opacity:0.5, fontSize:'8px'}}>ⓘ</sup></span>
+        <div className="stat-box" title="WHO DON600 probable cases.">
+          <span className="stat-val text-amber">{probable}</span>
+          <span className="stat-key">Probable</span>
         </div>
-        <div className="stat-box" title="Discrete international boundaries actively monitored.">
-          <span className="stat-val">{active_countries}</span>
-          <span className="stat-key">Regions <sup style={{opacity:0.5, fontSize:'8px'}}>ⓘ</sup></span>
+        <div className="stat-box" title="WHO DON600 deaths: three, not seven.">
+          <span className="stat-val">{deaths}</span>
+          <span className="stat-key">Deaths</span>
         </div>
-        <div className="stat-box" title="Total machine-filtered intelligence items ingested.">
-          <span className="stat-val text-dim">{total_signals}</span>
-          <span className="stat-key">Signals <sup style={{opacity:0.5, fontSize:'8px'}}>ⓘ</sup></span>
+        <div className="stat-box" title="People aboard at the time of the WHO update/public tracker docking notes.">
+          <span className="stat-val">{aboard}</span>
+          <span className="stat-key">Aboard</span>
+        </div>
+        <div className="stat-box" title="Total people tracked in the MV Hondius public outbreak dataset.">
+          <span className="stat-val text-dim">{tracked}</span>
+          <span className="stat-key">Tracked</span>
         </div>
       </div>
       <div style={{ fontSize: '9px', color:'#64748b', opacity:0.8, marginTop:'2px', marginLeft:'2px', fontWeight:600, letterSpacing:'0.02em' }}>
-        SOURCES: WHO SITREPS & PROMED-MAIL
+        SOURCES: WHO DON600 / AP / REGIONAL AUTHORITIES / PUBLIC MV HONDIUS TRACKER
       </div>
     </div>
   )

@@ -3,7 +3,7 @@ import json
 import os
 from datetime import datetime, timezone
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from apscheduler.schedulers.background import BackgroundScheduler
@@ -11,8 +11,10 @@ from apscheduler.schedulers.background import BackgroundScheduler
 import database
 import feeds
 import parser
-import alerts
-import trafilatura
+try:
+    import trafilatura
+except ImportError:
+    trafilatura = None
 
 app = FastAPI(title="Hantavirus Tracker API", version="1.0.0")
 
@@ -81,15 +83,6 @@ def ingest():
     inserted = database.insert_signals(entries, snapshot_id)
     print(f"  {inserted} new signals inserted")
 
-    if who_data["who_confirmed"] > previous_confirmed:
-        print(f"  Count rose {previous_confirmed} → "
-              f"{who_data['who_confirmed']}. Sending alerts...")
-        alerts.send_case_alert(
-            who_data["who_confirmed"],
-            who_data["who_deaths"],
-            who_data["who_countries"],
-        )
-
     print("Ingest complete.")
 
 
@@ -109,7 +102,7 @@ def get_snapshot():
     except Exception as e:
         print(f"Warning: failed to fetch case override stats: {e}")
 
-    return {"snapshot": snap, "signals": database.get_recent_signals(200)}
+    return {"snapshot": snap, "signals": database.get_recent_signals(500)}
 
 
 @app.get("/api/v1/delta")
@@ -149,20 +142,6 @@ def get_delta():
     }
 
 
-class AlertSignup(BaseModel):
-    email: str
-
-
-@app.post("/api/v1/alert-signup")
-def alert_signup(body: AlertSignup):
-    email = body.email.strip().lower()
-    if not alerts.is_valid_email(email):
-        raise HTTPException(status_code=400, detail="Invalid email address.")
-    if not database.insert_alert(email):
-        raise HTTPException(status_code=409, detail="Already registered.")
-    alerts.send_welcome_email(email)
-    return {"status": "ok", "message": "You're on the list."}
-
 
 @app.get("/health")
 def health():
@@ -171,14 +150,11 @@ def health():
         signals = conn.execute(
             "SELECT COUNT(*) as c FROM signals"
         ).fetchone()["c"]
-        subs = conn.execute(
-            "SELECT COUNT(*) as c FROM alerts"
-        ).fetchone()["c"]
     return {
         "status": "ok",
         "time":   datetime.now(timezone.utc).isoformat(),
         "signals_in_db":      signals,
-        "alert_subscribers":  subs,
+        "mailing_list_enabled": False,
     }
 
 
@@ -196,22 +172,19 @@ def get_cases():
     return database.get_cases()
 
 
-@app.post("/api/v1/cases")
-def create_case(body: CaseModel):
-    success = database.upsert_case(body.dict())
-    if not success:
-        raise HTTPException(status_code=500, detail="Failed to store case.")
-    return {"status": "ok", "case_id": body.id}
-
-
 @app.get("/api/v1/read-article")
 def read_article(url: str):
     """Fetches a target URL and returns the stripped markdown/plaintext content for client rendering."""
     try:
+        try:
+            import trafilatura
+        except ImportError:
+            trafilatura = None
+        if trafilatura is None:
+            raise Exception("Trafilatura library not installed on host.")
         downloaded = trafilatura.fetch_url(url)
         if not downloaded:
-            # Return partial data if fetch failed but not crashing
-            raise HTTPException(status_code=404, detail="Could not download remote article content.")
+             raise HTTPException(status_code=404, detail="Failed to fetch content")
         
         content = trafilatura.extract(downloaded, include_comments=False, include_tables=True, no_fallback=False)
         
