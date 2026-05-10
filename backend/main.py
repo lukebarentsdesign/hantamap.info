@@ -5,6 +5,8 @@ from datetime import datetime, timezone
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from apscheduler.schedulers.background import BackgroundScheduler
 
@@ -194,3 +196,27 @@ def read_article(url: str):
         return {"content": content}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Extraction failure: {str(e)}")
+
+
+# ----------------------------------------------------------------
+# Unified Distribution Pipeline: Serve Pre-compiled Static Assets
+# ----------------------------------------------------------------
+if os.path.exists("static"):
+    # 1. Map physical /assets folder directly for script/stylesheet hydration
+    if os.path.exists("static/assets"):
+         app.mount("/assets", StaticFiles(directory="static/assets"), name="assets")
+    
+    # 2. Deterministic fallback to index.html ensuring stable client-side routing (SPA)
+    @app.get("/{full_path:path}")
+    async def serve_spa(request: Request, full_path: str):
+        # Protection barrier against hijacking existing API endpoints
+        if full_path.startswith("api/"):
+            raise HTTPException(status_code=404, detail="Not found")
+            
+        # Resolve physical local path if requested file actually exists (e.g. favicon.ico)
+        physical_path = os.path.join("static", full_path)
+        if os.path.isfile(physical_path):
+            return FileResponse(physical_path)
+            
+        # Default entry point delivery
+        return FileResponse("static/index.html")

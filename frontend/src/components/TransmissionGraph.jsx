@@ -1,6 +1,8 @@
 import { useState, useEffect, useRef, useMemo } from 'react';
 import ForceGraph2D from 'react-force-graph-2d';
 
+const API = import.meta.env.VITE_API_URL || '';
+
 export default function TransmissionGraph() {
   const [data, setData] = useState({ nodes: [], links: [] });
   const [loading, setLoading] = useState(true);
@@ -8,7 +10,7 @@ export default function TransmissionGraph() {
   const [dimensions, setDimensions] = useState({ width: 800, height: 600 });
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/v1/cases')
+    fetch(`${API}/api/v1/cases`)
       .then(r => r.json())
       .then(cases => {
         const nodes = cases.map(c => ({
