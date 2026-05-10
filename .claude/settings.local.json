@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/c/Users/Studio/Documents/Antigravity/Hantamap.info/frontend/src/**)"
+    ]
+  }
+}

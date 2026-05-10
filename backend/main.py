@@ -179,6 +179,26 @@ def get_cases():
 @app.get("/api/v1/read-article")
 def read_article(url: str):
     """Fetches a target URL and returns the stripped markdown/plaintext content for client rendering."""
+    # -- SECURITY HARDENING: Anti-SSRF Protection --
+    try:
+        from urllib.parse import urlparse
+        parsed = urlparse(url)
+        
+        # 1. Only allow standard web schemes
+        if parsed.scheme.lower() not in ['http', 'https']:
+            raise HTTPException(status_code=400, detail="Only http/https allowed")
+        
+        host = parsed.hostname.lower() if parsed.hostname else ""
+        
+        # 2. Strictly block local hostnames and standard local subnets
+        blocked_patterns = ['localhost', '127.0.0.1', '::1', '0.0.0.0', '169.254.', '10.', '192.168.', '172.']
+        if any(pat in host for pat in blocked_patterns):
+             raise HTTPException(status_code=403, detail="Access to internal infrastructure blocked")
+    except Exception as e:
+         if isinstance(e, HTTPException): raise e
+         raise HTTPException(status_code=400, detail="Malformed target URL")
+    # -----------------------------------------------
+
     try:
         try:
             import trafilatura

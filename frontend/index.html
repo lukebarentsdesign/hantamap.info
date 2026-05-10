@@ -3,28 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="/favicon.png" />
+  <link rel="apple-touch-icon" href="/favicon.png" />
   <meta name="theme-color" content="#08090c" />
 
-  <title>Hantavirus Outbreak Tracker — Live WHO &amp; ECDC Data</title>
+  <title>Hantamap — Live Hantavirus Map & Global Case Tracker</title>
   <meta name="description"
-    content="Independent real-time hantavirus tracker. WHO-sourced confirmed
-    cases and deaths. 24 feeds across 18 countries in 12 languages.
-    Not medical advice." />
+    content="Hantamap provides real-time tracking of global Hantavirus cases and mortality data. Aggregating intelligence from official WHO, ECDC, and CDC data streams across 18+ countries." />
+  
+  <link rel="canonical" href="https://hantamap.info/" />
 
-  <meta property="og:type"         content="website" />
-  <meta property="og:title"        content="Hantavirus Outbreak Tracker" />
-  <meta property="og:description"  content="WHO-sourced confirmed cases
-    and global news signals from 24 feeds across 18 countries." />
-  <meta property="og:image"        content="/share-card.png" />
-  <meta property="og:image:width"  content="1200" />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://hantamap.info/" />
+  <meta property="og:title" content="Hantamap — Live Hantavirus Map & Tracker" />
+  <meta property="og:description" content="Real-time monitoring of global Hantavirus outbreak data, including WHO and ECDC confirmed cases." />
+  <meta property="og:image" content="https://hantamap.info/share-card.png" />
+  <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:image:alt"    content="Hantavirus Tracker live data" />
 
-  <meta name="twitter:card"        content="summary_large_image" />
-  <meta name="twitter:title"       content="Hantavirus Outbreak Tracker" />
-  <meta name="twitter:description" content="Live WHO confirmed cases. Not medical advice." />
-  <meta name="twitter:image"       content="/share-card.png" />
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content="https://hantamap.info/" />
+  <meta name="twitter:title" content="Hantamap — Live Hantavirus Map Tracker" />
+  <meta name="twitter:description" content="Real-time tracking of global Hantavirus outbreaks and WHO confirmed cases." />
+  <meta name="twitter:image" content="https://hantamap.info/share-card.png" />
 
+  <!-- Fonts & External -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap"
@@ -32,21 +37,29 @@
   <link rel="stylesheet"
         href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
 
+  <!-- Structured Data for Google Rich Results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Hantamap",
+    "alternateName": "Hantamap Info",
+    "url": "https://hantamap.info/",
+    "description": "Interactive map tracking global hantavirus cases and intelligence."
+  }
+  </script>
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "MedicalCondition",
     "name": "Hantavirus",
-    "alternateName": ["HPS", "Andes virus", "Hantavirus Pulmonary Syndrome"],
-    "description": "Hantavirus is a rodent-borne genus of viruses causing
-      Hantavirus Pulmonary Syndrome in the Americas and Haemorrhagic Fever
-      with Renal Syndrome in Europe and Asia.",
-    "url": "https://www.who.int/news-room/fact-sheets/detail/hantavirus-and-hantavirus-disease",
-    "code": { "@type": "MedicalCode", "code": "B33.4",
-              "codingSystem": "ICD-10" }
+    "alternateName": ["HPS", "Hantavirus Pulmonary Syndrome"],
+    "description": "Hantavirus is a rodent-borne disease tracking available via Hantamap.",
+    "url": "https://hantamap.info/"
   }
   </script>
-  <script defer data-domain="hantavirus-tracker.com" src="https://plausible.io/js/script.js"></script>
+
+  <script defer data-domain="hantamap.info" src="https://plausible.io/js/script.js"></script>
 </head>
 <body>
   <div id="root"></div>
