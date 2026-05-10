@@ -12,6 +12,7 @@ import database
 import feeds
 import parser
 import alerts
+import trafilatura
 
 app = FastAPI(title="Hantavirus Tracker API", version="1.0.0")
 
@@ -201,3 +202,22 @@ def create_case(body: CaseModel):
     if not success:
         raise HTTPException(status_code=500, detail="Failed to store case.")
     return {"status": "ok", "case_id": body.id}
+
+
+@app.get("/api/v1/read-article")
+def read_article(url: str):
+    """Fetches a target URL and returns the stripped markdown/plaintext content for client rendering."""
+    try:
+        downloaded = trafilatura.fetch_url(url)
+        if not downloaded:
+            # Return partial data if fetch failed but not crashing
+            raise HTTPException(status_code=404, detail="Could not download remote article content.")
+        
+        content = trafilatura.extract(downloaded, include_comments=False, include_tables=True, no_fallback=False)
+        
+        if not content:
+            return {"content": "Metadata extraction yielded no body text. The target domain may rely entirely on client-side javascript renderers."}
+            
+        return {"content": content}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"Extraction failure: {str(e)}")

@@ -6,7 +6,7 @@ export function DisclaimerBar() {
         <line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/>
       </svg>
       <span className="tag">SYSTEM NOTICE</span>
-      <span className="msg">Consolidated authoritative health intelligence from WHO, ECDC, and ProMED. <strong>Does not constitute medical diagnostic advice.</strong></span>
+      <span className="msg">Hantamap aggregates real-time signals from WHO, CDC, ECDC and global news outlets. Free, transparent, sourced. <strong>Does not constitute medical advice.</strong></span>
     </div>
   )
 }

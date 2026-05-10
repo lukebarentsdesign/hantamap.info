@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+
+Disallow: /api/
+Disallow: /admin/
+
+Sitemap: https://hantavirus-tracker.manus.space/sitemap.xml

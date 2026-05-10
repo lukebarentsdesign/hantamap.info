@@ -34,18 +34,30 @@ export default function TransmissionGraph() {
         setLoading(false);
       });
 
-    const updateSize = () => {
-      if (containerRef.current) {
-        setDimensions({
-          width: containerRef.current.offsetWidth,
-          height: containerRef.current.offsetHeight
-        });
+  useEffect(() => {
+    if (loading || data.nodes.length === 0) return;
+    
+    const container = containerRef.current;
+    if (!container) return;
+
+    const resizeObserver = new ResizeObserver(entries => {
+      for (let entry of entries) {
+        const { width, height } = entry.contentRect;
+        setDimensions({ width, height });
       }
+    });
+
+    resizeObserver.observe(container);
+    // Immediate initial size capture
+    setDimensions({
+      width: container.offsetWidth || 800,
+      height: container.offsetHeight || 600
+    });
+
+    return () => {
+      resizeObserver.disconnect();
     };
-    window.addEventListener('resize', updateSize);
-    setTimeout(updateSize, 100);
-    return () => window.removeEventListener('resize', updateSize);
-  }, []);
+  }, [loading, data.nodes.length]);
 
   if (loading) {
     return <div className="graph-placeholder">Loading Analysis Graph...</div>;

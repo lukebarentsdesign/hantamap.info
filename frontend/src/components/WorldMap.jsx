@@ -2,26 +2,26 @@ import { MapContainer, TileLayer, CircleMarker,
          Polyline, Tooltip } from 'react-leaflet'
 
 const LOCATIONS = [
-  { name: 'South Africa',   c: [-30.56,  22.94] },
-  { name: 'Netherlands',    c: [ 52.37,   4.90] },
-  { name: 'Germany',        c: [ 51.17,  10.45] },
-  { name: 'Spain',          c: [ 40.42,  -3.70] },
-  { name: 'Switzerland',    c: [ 46.82,   8.23] },
-  { name: 'United Kingdom', c: [ 51.51,  -0.13] },
-  { name: 'France',         c: [ 46.23,   2.21] },
-  { name: 'Italy',          c: [ 41.87,  12.57] },
-  { name: 'Poland',         c: [ 51.92,  19.15] },
-  { name: 'Argentina',      c: [-38.42, -63.62] },
-  { name: 'Canada',         c: [ 56.13,-106.35] },
-  { name: 'United States',  c: [ 37.09, -95.71] },
-  { name: 'Australia',      c: [-25.27, 133.78] },
-  { name: 'Turkey',         c: [ 38.96,  35.24] },
-  { name: 'Greece',         c: [ 39.07,  21.82] },
-  { name: 'Portugal',       c: [ 39.39,  -8.22] },
-  { name: 'Brazil',         c: [-14.23, -51.92] },
-  { name: 'Chile',          c: [-35.67, -71.54] },
-  { name: 'Russia',         c: [ 61.52, 105.31] },
-  { name: 'South Korea',    c: [ 35.90, 127.76] },
+  { name: 'South Africa',   c: [-30.56,  22.94], iso: 'ZA' },
+  { name: 'Netherlands',    c: [ 52.37,   4.90], iso: 'NL' },
+  { name: 'Germany',        c: [ 51.17,  10.45], iso: 'DE' },
+  { name: 'Spain',          c: [ 40.42,  -3.70], iso: 'ES' },
+  { name: 'Switzerland',    c: [ 46.82,   8.23], iso: 'CH' },
+  { name: 'United Kingdom', c: [ 51.51,  -0.13], iso: 'GB' },
+  { name: 'France',         c: [ 46.23,   2.21], iso: 'FR' },
+  { name: 'Italy',          c: [ 41.87,  12.57], iso: 'IT' },
+  { name: 'Poland',         c: [ 51.92,  19.15], iso: 'PL' },
+  { name: 'Argentina',      c: [-38.42, -63.62], iso: 'AR' },
+  { name: 'Canada',         c: [ 56.13,-106.35], iso: 'CA' },
+  { name: 'United States',  c: [ 37.09, -95.71], iso: 'US' },
+  { name: 'Australia',      c: [-25.27, 133.78], iso: 'AU' },
+  { name: 'Turkey',         c: [ 38.96,  35.24], iso: 'TR' },
+  { name: 'Greece',         c: [ 39.07,  21.82], iso: 'GR' },
+  { name: 'Portugal',       c: [ 39.39,  -8.22], iso: 'PT' },
+  { name: 'Brazil',         c: [-14.23, -51.92], iso: 'BR' },
+  { name: 'Chile',          c: [-35.67, -71.54], iso: 'CL' },
+  { name: 'Russia',         c: [ 61.52, 105.31], iso: 'RU' },
+  { name: 'South Korea',    c: [ 35.90, 127.76], iso: 'KR' },
 ]
 
 const ROUTE = [
@@ -34,7 +34,7 @@ const ROUTE = [
 const TILES = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png'
 const ATTR = '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>'
 
-export function WorldMap({ whoCountries = [], isDashboard = false }) {
+export function WorldMap({ whoCountries = [], signals = [], isDashboard = false, onRegionClick }) {
   const normalizedConfirmed = whoCountries.map(c => c.toLowerCase())
 
   const renderMap = () => (
@@ -45,28 +45,49 @@ export function WorldMap({ whoCountries = [], isDashboard = false }) {
     >
       <TileLayer url={TILES} attribution={ATTR} subdomains="abcd" maxZoom={19} />
 
-      {LOCATIONS.map(({ name, c }) => {
+      {LOCATIONS.map(({ name, c, iso }) => {
         const isConfirmed = normalizedConfirmed.includes(name.toLowerCase());
+        const regionSignals = signals.filter(s => s.country_iso2 === iso);
+        const signalCount = regionSignals.length;
         
         return (
           <CircleMarker 
             key={name} 
             center={c} 
-            radius={isConfirmed ? 9 : 5}
+            radius={isConfirmed ? 12 : 7}
+            eventHandlers={{
+              click: () => { if (onRegionClick && iso) onRegionClick(iso); }
+            }}
             pathOptions={
               isConfirmed 
-                ? { color:'#e85d3c', fillColor:'#e85d3c', fillOpacity:0.65, weight:1.5 }
+                ? { color:'#e85d3c', fillColor:'#e85d3c', fillOpacity:0.65, weight:1.5, className: 'pulse-marker' }
                 : { color:'#a0aabf', fillColor:'#cbd2df', fillOpacity:0.5, weight:1 }
             }
+            style={{ cursor: 'pointer' }}
           >
-            <Tooltip direction="top" offset={[0,-5]}>
-              <div style={{ fontFamily: 'var(--sans)', fontSize: '13px', lineHeight: '1.4' }}>
-                <strong style={{ color: '#1a1d23', fontSize: '14px' }}>{name}</strong><br />
+            <Tooltip direction="top" offset={[0,-5]} className="custom-map-tooltip">
+              <div style={{ fontFamily: 'var(--sans)', fontSize: '12px', lineHeight: '1.4', minWidth:'140px' }}>
+                <div style={{ display:'flex', justifyContent:'space-between', alignItems:'center', marginBottom:'4px' }}>
+                   <strong style={{ color: '#1a1d23', fontSize: '13px' }}>{name}</strong>
+                   <span style={{ fontSize:'10px', fontWeight:800, color:'#64748b' }}>{iso}</span>
+                </div>
                 {isConfirmed ? (
-                  <span style={{ color: '#d94423', fontWeight: '600' }}>● WHO Confirmed Active</span>
+                  <div style={{ color: '#d94423', fontWeight: '700', display:'flex', alignItems:'center', gap:'4px' }}>
+                    <span style={{ fontSize:'16px' }}>●</span> WHO CONFIRMED ACTIVE
+                  </div>
                 ) : (
-                  <span style={{ color: '#5a6575' }}>News signals monitored</span>
+                  <div style={{ color: '#5a6575', fontStyle:'italic' }}>Passively Monitored</div>
                 )}
+                
+                {signalCount > 0 && (
+                  <div style={{ marginTop:'6px', fontSize:'11px', color:'#475569' }}>
+                    <strong>{signalCount}</strong> Intelligence Signal{signalCount !== 1 ? 's' : ''} detected.
+                  </div>
+                )}
+                
+                <div style={{ marginTop: '8px', paddingTop:'4px', borderTop:'1px solid #eee', fontSize:'10px', color:'#2563eb', fontWeight:600 }}>
+                  🖱️ Click marker for regional intelligence
+                </div>
               </div>
             </Tooltip>
           </CircleMarker>

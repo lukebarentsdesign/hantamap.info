@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { WorldMap } from './WorldMap'
 import TransmissionGraph from './TransmissionGraph'
 
-export function DashboardViewport({ whoCountries }) {
+export function DashboardViewport({ whoCountries, signals, onRegionClick }) {
   const [activeTab, setActiveTab] = useState('map')
 
   return (
@@ -42,7 +42,7 @@ export function DashboardViewport({ whoCountries }) {
       <div className="dash-view-content">
         {activeTab === 'map' && (
           <div style={{height:'100%', width:'100%', animation: 'fadeIn 0.2s ease'}}>
-            <WorldMap whoCountries={whoCountries} isDashboard={true} />
+            <WorldMap whoCountries={whoCountries} signals={signals} isDashboard={true} onRegionClick={onRegionClick} />
           </div>
         )}
         

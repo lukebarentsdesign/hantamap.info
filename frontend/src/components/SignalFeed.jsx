@@ -1,21 +1,6 @@
 import { useState, useMemo } from 'react'
+import { getCountryName, getCountryFlag } from './flagUtils'
 
-const FLAGS = {
-  GB:'🇬🇧', US:'🇺🇸', DE:'🇩🇪', ES:'🇪🇸', FR:'🇫🇷',
-  IT:'🇮🇹', NL:'🇳🇱', PT:'🇵🇹', BR:'🇧🇷', AR:'🇦🇷',
-  AU:'🇦🇺', CA:'🇨🇦', RU:'🇷🇺', PL:'🇵🇱', TR:'🇹🇷',
-  KR:'🇰🇷', GR:'🇬🇷', AT:'🇦🇹', MX:'🇲🇽', CL:'🇨🇱',
-  ZA:'🇿🇦', CH:'🇨🇭', SH:'🇸🇭', FI:'🇫🇮', CA:'🇨🇦'
-}
-
-const COUNTRIES = {
-  AR: 'Argentina', CA: 'Canada', MX: 'Mexico', IT: 'Italy',
-  PT: 'Portugal', BR: 'Brazil', ES: 'Spain', US: 'United States',
-  FR: 'France', GB: 'United Kingdom', NL: 'Netherlands',
-  TR: 'Turkey', CL: 'Chile', DE: 'Germany', KR: 'South Korea',
-  AU: 'Australia', RU: 'Russia', FI: 'Finland', CH: 'Switzerland',
-  PL: 'Poland', GR: 'Greece', AT: 'Austria', ZA: 'South Africa'
-}
 
 function ago(iso) {
   if (!iso) return ''
@@ -26,7 +11,7 @@ function ago(iso) {
   return `${Math.round(s/86400)}d`
 }
 
-export function SignalFeed({ signals }) {
+export function SignalFeed({ signals, onArticleClick }) {
   const [expanded, setExpanded] = useState({})
 
   const groups = useMemo(() => {
@@ -34,7 +19,7 @@ export function SignalFeed({ signals }) {
     const map = {}
     signals.forEach(s => {
       const key = s.country_iso2 || 'XX'
-      if (!map[key]) map[key] = { code: key, name: COUNTRIES[key] || 'International', items: [] }
+      if (!map[key]) map[key] = { code: key, name: getCountryName(key) || 'International', items: [] }
       map[key].items.push(s)
     })
     // Sort by count descending, then name
@@ -67,8 +52,8 @@ export function SignalFeed({ signals }) {
                 aria-expanded={isOpen}
               >
                 <div className="sig-group-label">
-                  <span className="sig-flag" aria-hidden="true">
-                    {FLAGS[g.code] ?? '🌍'}
+                  <span className="sig-flag" aria-hidden="true" style={{display:'flex', alignItems:'center'}}>
+                    {g.code === 'XX' ? '🌍' : <img src={getCountryFlag(g.code)} alt="" style={{width:'16px', height:'12px', objectFit:'cover', borderRadius:'1px'}}/>}
                   </span>
                   <span>{g.name}</span>
                 </div>
@@ -95,9 +80,19 @@ export function SignalFeed({ signals }) {
                           S-{s.id ? String(s.id).slice(-3) : idx + 101}
                         </div>
                         <div className="sig-row-content">
-                          <a href={s.url} target="_blank" rel="noopener noreferrer" className="sig-title">
+                          <button 
+                            onClick={(e) => {
+                              e.preventDefault();
+                              if (onArticleClick) onArticleClick(s.url, s.title);
+                            }}
+                            style={{
+                              background:'none', border:'none', padding:0, cursor:'pointer', 
+                              textAlign:'left', display:'block', width:'100%', fontFamily:'inherit'
+                            }}
+                            className="sig-title"
+                          >
                             {s.title}
-                          </a>
+                          </button>
                           <div className="sig-meta" style={{marginTop:'4px', display:'flex', alignItems:'center', gap:'6px'}}>
                             <span className="badge-lite">{s.source}</span>
                             {s.language && <span className="badge-lite text-mono">{s.language.toUpperCase()}</span>}
