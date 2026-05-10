@@ -135,23 +135,16 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
         });
         const isHot = hotSignals.length > 0;
 
-        // NEW: Derive visual state dynamically from text intel
-        const textStatus = getRegionStatus(regionSignals);
-        
-        // If the hardcoded flag 'isConfirmed' is on, upgrade to Confirmed color if not already Deaths
-        let finalColor = textStatus.color;
-        let finalLabel = textStatus.label;
-        if (isConfirmed && textStatus.priority < 3) {
-          finalColor = '#dc2626'; // Forced Confirmed
-          finalLabel = 'Confirmed Active';
-        }
+        // RESTORE SAFETY: The Map Dot ALWAYS uses the verified "isConfirmed" source data ONLY. 
+        // We do NOT let the news scraper override the map's state!
+        const finalColor = isConfirmed ? '#dc2626' : (isHot ? '#0284c7' : '#0ea5e9');
+        const finalLabel = isConfirmed ? 'Confirmed Outbreak Area' : (isHot ? 'Recent News Signals' : 'Standard Monitoring');
 
         let markerClass = "";
-        if (finalColor === '#dc2626' || finalColor === '#000000') markerClass = "pulse-marker";
+        if (isConfirmed) markerClass = "pulse-marker";
         else if (isHot) markerClass = "heat-signal";
 
-        // Boost size slightly for severe categories
-        const markerRadius = (finalColor === '#000000' || finalColor === '#dc2626') ? 8 : 6;
+        const markerRadius = isConfirmed ? 8 : 6;
 
         return (
           <CircleMarker 
@@ -162,7 +155,7 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
             color="white"
             weight={2}
             opacity={1}
-            fillOpacity={finalColor === '#000000' ? 1 : 0.8}
+            fillOpacity={isConfirmed ? 0.9 : 0.6}
             className={markerClass}
             eventHandlers={{
               click: () => onRegionClick && onRegionClick(iso)
@@ -208,24 +201,16 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
       flexWrap: 'wrap'
     }}>
       <div className="legend-i">
-        <span className="legend-dot" style={{ background: '#000000' }} aria-hidden="true" />
-        Fatalities
-      </div>
-      <div className="legend-i">
         <span className="legend-dot pulse-marker" style={{ background: '#dc2626' }} aria-hidden="true" />
-        Confirmed
+        Confirmed Outbreak
       </div>
       <div className="legend-i">
-        <span className="legend-dot" style={{ background: '#ea580c' }} aria-hidden="true" />
-        Pending / Flights
-      </div>
-      <div className="legend-i">
-        <span className="legend-dot" style={{ background: '#f59e0b' }} aria-hidden="true" />
-        Suspected
+        <span className="legend-dot heat-signal" style={{ background: '#0284c7' }} aria-hidden="true" />
+        Recent Signal Activity
       </div>
       <div className="legend-i">
         <span className="legend-dot" style={{ background: '#0ea5e9', opacity:0.6 }} aria-hidden="true" />
-        Monitoring
+        Monitoring Coverage
       </div>
     </div>
   )
