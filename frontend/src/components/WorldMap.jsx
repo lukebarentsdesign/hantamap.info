@@ -10,6 +10,10 @@ const TILES = 'https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}
 const ATTR = '© <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> © <a href="https://carto.com/">CARTO</a>'
 
 export function WorldMap({ whoCountries = [], signals = [], isDashboard = false, onRegionClick }) {
+  const isSmallViewport = typeof window !== 'undefined' && window.innerWidth <= 640
+  const initialZoom = isSmallViewport ? 1.35 : 2.5
+  const minimumZoom = isSmallViewport ? 1.1 : 2
+
   // 1. Map string names to standardized ISO codes
   const confirmedIsoCodes = new Set(
     whoCountries.map(c => getIsoCode(c.toString()).toUpperCase())
@@ -43,9 +47,9 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
   const renderMap = () => (
     <MapContainer
       center={[20, 0]} 
-      zoom={2.5}
+      zoom={initialZoom}
       zoomSnap={0.25}
-      minZoom={2}
+      minZoom={minimumZoom}
       maxBounds={[[-85, -180], [85, 180]]}
       maxBoundsViscosity={1.0}
       worldCopyJump={false}
@@ -210,12 +214,7 @@ export function WorldMap({ whoCountries = [], signals = [], isDashboard = false,
     return (
       <div className="dash-map-container" style={{ position: 'relative' }}>
         {renderMap()}
-        <div style={{
-          position:'absolute', bottom:'20px', left:'20px', zIndex: 1000,
-          background:'var(--glass)', backdropFilter:'blur(10px)',
-          padding:'16px', borderRadius:'12px', border:'1px solid var(--border)',
-          boxShadow:'0 8px 24px rgba(0,0,0,0.06)'
-        }}>
+        <div className="map-legend-panel">
            {renderLegend()}
         </div>
       </div>

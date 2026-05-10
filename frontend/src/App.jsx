@@ -75,13 +75,7 @@ export default function App() {
         {/* Clickable Interactive Region Switcher */}
         <button 
           onClick={() => setIsLocaleOpen(!isLocaleOpen)}
-          style={{ 
-            marginLeft:'auto', marginRight:'20px', display:'flex', 
-            alignItems:'center', gap:'8px', background:'var(--bg2)', 
-            padding:'6px 14px', borderRadius:'20px', border:'1px solid var(--border)',
-            cursor:'pointer', transition:'all 0.2s'
-          }}
-          className="hover-bright"
+          className="locale-toggle hover-bright"
           title="Click to expand all regions"
         >
           <img 
@@ -99,7 +93,7 @@ export default function App() {
       </header>
 
       {/* Main Content Flow Area (Dynamic Flex Pushing) */}
-      <div style={{ display:'flex', flex:1, overflow:'hidden', flexDirection:'row-reverse', width:'100%' }}>
+      <div className="dash-main-flow">
         
         {/* Contextual Right Side Intelligence Drawer (User Recommended) */}
         {isLocaleOpen && (

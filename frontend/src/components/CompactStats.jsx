@@ -9,7 +9,7 @@ export function CompactStats({ snapshot }) {
   const tracked = MV_HONDIUS_STATS.tracked
 
   return (
-    <div style={{ display:'flex', flexDirection:'column', alignItems:'flex-start' }}>
+    <div className="compact-stats">
       <div className="top-stats">
         <div className="stat-box" title="WHO DON600 total cases as of 8 May 2026.">
           <span className="stat-val text-orange">{cases}</span>
@@ -36,7 +36,7 @@ export function CompactStats({ snapshot }) {
           <span className="stat-key">Tracked</span>
         </div>
       </div>
-      <div style={{ fontSize: '9px', color:'#64748b', opacity:0.8, marginTop:'2px', marginLeft:'2px', fontWeight:600, letterSpacing:'0.02em' }}>
+      <div className="compact-stats-source">
         SOURCES: WHO DON600 / AP / REGIONAL AUTHORITIES / PUBLIC MV HONDIUS TRACKER
       </div>
     </div>

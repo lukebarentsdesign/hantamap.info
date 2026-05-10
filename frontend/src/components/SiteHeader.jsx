@@ -23,7 +23,7 @@ export function SiteHeader({ updatedAt, snapshot }) {
 
       <CompactStats snapshot={snapshot} />
 
-      <div className="header-meta" style={{ flexShrink: 0, fontSize: '12px' }}>
+      <div className="header-meta">
         Updated {ts}
       </div>
     </div>
